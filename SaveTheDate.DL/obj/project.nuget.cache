@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mLxmFhv6e14dBEL60BA158TWem2/aaXvIimJ2hMSY5g6yPg6UxK9YZBrv435W0BJ3Qw25wcVIMYFrfd+5aYT2Q==",
+  "dgSpecHash": "E6zsgUU6NzDbU8GIX5th1OMJcFE6m6CMGm7weHbmUiy6ZN5hmCm+5cSqoTbFQJdbWf8FbGJy/QsIC+XO42rfuA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Osnat\\Desktop\\פרויקט גמר\\SaveTheDate.DL\\SaveTheDate.DL.csproj",
+  "projectFilePath": "C:\\Users\\Osnat\\source\\repos\\SaveTheDateServer\\SaveTheDate.DL\\SaveTheDate.DL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Osnat\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Osnat\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
