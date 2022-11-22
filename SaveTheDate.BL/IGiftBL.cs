@@ -6,10 +6,10 @@ namespace SaveTheDate.BL
     public interface IGiftBL
     {
         List<GiftDTO> GetAllGift();
-        public bool AddGift(GiftDTO NewGiftDTO);
-        public bool DeleteGift(string CoronaCode);
+        bool AddGift(GiftDTO NewGiftDTO);
+        bool DeleteGift(string CoronaCode);
 
-        public List<GiftDTO> GetGiftsByEventType(int eventType);
+        List<GiftDTO> GetGiftsByEventType(int eventType);
 
     }
 

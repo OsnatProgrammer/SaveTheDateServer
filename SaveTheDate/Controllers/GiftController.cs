@@ -11,11 +11,11 @@ namespace SaveTheDate.API.Controllers
 
     public class GiftController : ControllerBase
     {
-        private IGiftBL GiftBL;
+        private IGiftBL _giftBL;
 
-        public GiftController(IGiftBL GiftBL)
+        public GiftController(IGiftBL giftBL)
         {
-            this.GiftBL = GiftBL;
+            this._giftBL = giftBL;
         }
 
 
@@ -25,7 +25,7 @@ namespace SaveTheDate.API.Controllers
         {
             try
             {
-                return Ok(GiftBL.GetAllGift());
+                return Ok(this._giftBL.GetAllGift());
             }
             catch (Exception ex)
             {
@@ -41,7 +41,7 @@ namespace SaveTheDate.API.Controllers
         {
             try
             {
-                return Ok(GiftBL.GetGiftsByEventType(eventType));
+                return Ok(this._giftBL.GetGiftsByEventType(eventType));
             }
             catch (Exception ex)
             {
