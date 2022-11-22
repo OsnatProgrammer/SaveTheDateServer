@@ -23,7 +23,6 @@ namespace SaveTheDate.DL
             {
                 throw ex;
             }
-
         }
 
 

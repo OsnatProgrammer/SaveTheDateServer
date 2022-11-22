@@ -8,7 +8,7 @@ namespace SaveTheDate.DTO
     {
         public int Id { get; set; }
         public int UserId { get; set; }
-        public string EventType { get; set; }
+        public int EventType { get; set; }
         public DateTime Date { get; set; }
         public string Password { get; set; }
         public string Name { get; set; }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SaveTheDate.DL
 {
-    internal class BusDL
+    public class BusDL
     {
     }
 }
