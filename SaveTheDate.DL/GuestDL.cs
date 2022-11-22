@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SaveTheDate.DL
 {
-    internal class GuestDL
+    public class GuestDL
     {
     }
 }

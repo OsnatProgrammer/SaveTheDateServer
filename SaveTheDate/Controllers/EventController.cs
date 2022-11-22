@@ -22,11 +22,11 @@ namespace SaveTheDate.API.Controllers
 
         [HttpGet]
         [Route("GetEventById/{id}")]
-        public ActionResult<Event> GetEventById(int eventID)
+        public ActionResult<Event> GetEventById(string id)
         {
             try
             {
-                return EventBL.GetEventById(eventID);
+                return EventBL.GetEventById(int.Parse(id));
             }
             catch (Exception ex)
             {
@@ -51,12 +51,12 @@ namespace SaveTheDate.API.Controllers
 
 
         [HttpPut]
-        [Route("UpdateEvent/{EventID}")]
-        public bool UpdateEvent(int eventID, [FromBody] EventDTO myEvent)
+        [Route("UpdateEvent/{eventID}")]
+        public bool UpdateEvent(string eventID, [FromBody] EventDTO myEvent)
         {
             try
             {
-                return EventBL.UpdateEvent(eventID, myEvent);
+                return EventBL.UpdateEvent(int.Parse(eventID), myEvent);
             }
             catch (Exception ex)
             {

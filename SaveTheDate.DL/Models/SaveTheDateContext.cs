@@ -67,10 +67,6 @@ namespace SaveTheDate.DL.Models
 
                 entity.Property(e => e.Date).HasColumnType("datetime");
 
-                entity.Property(e => e.EventType)
-                    .IsRequired()
-                    .HasMaxLength(50);
-
                 entity.Property(e => e.Link)
                     .IsRequired()
                     .HasMaxLength(50);
@@ -95,6 +91,12 @@ namespace SaveTheDate.DL.Models
 
                 entity.Property(e => e.UserId).HasColumnName("UserID");
 
+                entity.HasOne(d => d.EventTypeNavigation)
+                    .WithMany(p => p.Events)
+                    .HasForeignKey(d => d.EventType)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Event_EventType");
+
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.Events)
                     .HasForeignKey(d => d.UserId)
@@ -110,7 +112,7 @@ namespace SaveTheDate.DL.Models
                     .IsRequired()
                     .HasMaxLength(50);
 
-                entity.Property(e => e.GiftsId).HasColumnName("GiftsID");
+                entity.Property(e => e.GiftId).HasColumnName("GiftID");
 
                 entity.HasOne(d => d.Event)
                     .WithMany(p => p.EventGifts)
@@ -118,9 +120,9 @@ namespace SaveTheDate.DL.Models
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_EventGifts_Event");
 
-                entity.HasOne(d => d.Gifts)
+                entity.HasOne(d => d.Gift)
                     .WithMany(p => p.EventGifts)
-                    .HasForeignKey(d => d.GiftsId)
+                    .HasForeignKey(d => d.GiftId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_EventGifts_Gifts");
 
@@ -243,7 +245,7 @@ namespace SaveTheDate.DL.Models
 
                 entity.Property(e => e.Email)
                     .IsRequired()
-                    .HasMaxLength(10)
+                    .HasMaxLength(20)
                     .IsUnicode(false);
 
                 entity.Property(e => e.Name)
