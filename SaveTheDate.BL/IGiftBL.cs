@@ -1,4 +1,5 @@
-﻿using SaveTheDate.DTO;
+﻿using SaveTheDate.DL.Models;
+using SaveTheDate.DTO;
 using System.Collections.Generic;
 
 namespace SaveTheDate.BL
@@ -10,7 +11,7 @@ namespace SaveTheDate.BL
         bool DeleteGift(string CoronaCode);
 
         List<GiftDTO> GetGiftsByEventType(int eventType);
-
+        Gift GetGiftById(int v);
     }
 
 

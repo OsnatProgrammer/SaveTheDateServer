@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SaveTheDate.BL;
+using SaveTheDate.DL.Models;
 using SaveTheDate.DTO;
 using System;
 
@@ -33,6 +34,20 @@ namespace SaveTheDate.API.Controllers
             }
         }
 
+        [HttpGet]
+        [Route("GetGiftById/{id}")]
+        public ActionResult<Gift> GetGiftById(string id)
+        {
+            try
+            {
+                return _giftBL.GetGiftById(int.Parse(id));
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
 
 
         [HttpGet]
@@ -49,34 +64,39 @@ namespace SaveTheDate.API.Controllers
             }
         }
 
-    }
-    // [HttpPost]
-    // [Route("AddGift")]
-    // public bool AddGift([FromBody] GiftDTO Gift)
-    // {
-    //     try
-    //     {
-    //         return GiftBL.AddGift(Gift);
-    //     }
-    //     catch (Exception ex)
-    //     {
-    //         throw ex;
-    //     }
-    // }
+  
+     [HttpPost]
+     [Route("AddGift")]
+     public bool AddGift([FromBody] GiftDTO Gift)
+     {
+         try
+         {
+            return _giftBL.AddGift(Gift);
+         }
+         catch (Exception ex)
+         {
+             throw ex;
+         }
+     } 
+    
+    
+    
+   
 
-    //[HttpDelete]
-    //    [Route("DeleteGift/{CoronaCode}")]
-    //    public bool DeleteGift(string CoronaCode)
-    //    {
-    //        try
-    //        {
-    //            return GiftBL.DeleteGift(CoronaCode);
-    //        }
-    //        catch (Exception ex)
-    //        {
-    //            throw ex;
-    //        }
-    //    }
+    [HttpDelete]
+        [Route("DeleteGift/{giftID}")]
+        public bool DeleteGift(string giftID)
+        {
+            try
+            {
+                return _giftBL.DeleteGift(giftID);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
-    // }
-}
+     }
+
+ }

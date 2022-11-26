@@ -32,7 +32,10 @@ namespace SaveTheDate
 
             services.AddScoped<IEventDL, EventDL>();
             services.AddScoped<IEventBL, EventBL>();
-            
+
+            services.AddScoped<IGiftDL, GiftDL>();
+            services.AddScoped<IGiftBL, GiftBL>();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "SaveTheDate", Version = "v1" });
