@@ -6190,19 +6190,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Osnat\\.nuget\\packages\\": {}
+    "C:\\Users\\הדסה אקרמן\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Osnat\\source\\repos\\SaveTheDateServer\\SaveTheDate\\SaveTheDate.API.csproj",
+      "projectUniqueName": "C:\\Users\\הדסה אקרמן\\Desktop\\פרויקט גמר\\SaveTheDate\\SaveTheDate.API.csproj",
       "projectName": "SaveTheDate.API",
-      "projectPath": "C:\\Users\\Osnat\\source\\repos\\SaveTheDateServer\\SaveTheDate\\SaveTheDate.API.csproj",
-      "packagesPath": "C:\\Users\\Osnat\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Osnat\\source\\repos\\SaveTheDateServer\\SaveTheDate\\obj\\",
+      "projectPath": "C:\\Users\\הדסה אקרמן\\Desktop\\פרויקט גמר\\SaveTheDate\\SaveTheDate.API.csproj",
+      "packagesPath": "C:\\Users\\הדסה אקרמן\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\הדסה אקרמן\\Desktop\\פרויקט גמר\\SaveTheDate\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Osnat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\הדסה אקרמן\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6216,11 +6216,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Osnat\\source\\repos\\SaveTheDateServer\\SaveTheDate.BL\\SaveTheDate.BL.csproj": {
-              "projectPath": "C:\\Users\\Osnat\\source\\repos\\SaveTheDateServer\\SaveTheDate.BL\\SaveTheDate.BL.csproj"
+            "C:\\Users\\הדסה אקרמן\\Desktop\\פרויקט גמר\\SaveTheDate.BL\\SaveTheDate.BL.csproj": {
+              "projectPath": "C:\\Users\\הדסה אקרמן\\Desktop\\פרויקט גמר\\SaveTheDate.BL\\SaveTheDate.BL.csproj"
             },
-            "C:\\Users\\Osnat\\source\\repos\\SaveTheDateServer\\SaveTheDate.DTO\\SaveTheDate.DTO.csproj": {
-              "projectPath": "C:\\Users\\Osnat\\source\\repos\\SaveTheDateServer\\SaveTheDate.DTO\\SaveTheDate.DTO.csproj"
+            "C:\\Users\\הדסה אקרמן\\Desktop\\פרויקט גמר\\SaveTheDate.DTO\\SaveTheDate.DTO.csproj": {
+              "projectPath": "C:\\Users\\הדסה אקרמן\\Desktop\\פרויקט גמר\\SaveTheDate.DTO\\SaveTheDate.DTO.csproj"
             }
           }
         }
@@ -6258,7 +6258,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.306\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }
