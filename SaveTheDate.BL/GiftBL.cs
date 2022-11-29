@@ -11,12 +11,12 @@ namespace SaveTheDate.BL
     public class GiftBL : IGiftBL
     {
 
-        IGiftDL GiftDL;
+        IGiftDL _giftDL;
         IMapper mapper;
 
         public GiftBL(IGiftDL GiftDL)
         {
-            this.GiftDL = GiftDL;
+            this._giftDL = GiftDL;
             var config = new MapperConfiguration(cfg =>
             {
                 cfg.AddProfile<AutoMapperProfile>();
@@ -27,26 +27,26 @@ namespace SaveTheDate.BL
 
         public List<GiftDTO> GetAllGift()
         {
-            List<Gift> Gift = GiftDL.GetAllGift();
+            List<Gift> Gift = _giftDL.GetAllGift();
             return mapper.Map<List<Gift>, List<GiftDTO>>(Gift);
         }
 
 
         public List<GiftDTO> GetGiftsByEventType(int eventType)
         {
-            List<Gift> Gift = GiftDL.GetGiftsByEventType(eventType);
+            List<Gift> Gift = _giftDL.GetGiftsByEventType(eventType);
             return mapper.Map<List<Gift>, List<GiftDTO>>(Gift);
         }
 
         public bool AddGift(GiftDTO NewGiftDTO)
         {
             Gift Gift = mapper.Map<GiftDTO, Gift>(NewGiftDTO);
-            return GiftDL.AddGift(Gift);
+            return _giftDL.AddGift(Gift);
         }
 
         public bool DeleteGift(string CoronaCode)
         {
-            return GiftDL.DeleteGift(CoronaCode);
+            return _giftDL.DeleteGift(CoronaCode);
         }
 
 

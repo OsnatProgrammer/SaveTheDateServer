@@ -24,3 +24,16 @@ C:\Users\Osnat\source\repos\SaveTheDateServer\SaveTheDate.DL\obj\Debug\netcoreap
 C:\Users\Osnat\source\repos\SaveTheDateServer\SaveTheDate.DL\obj\Debug\netcoreapp3.1\SaveTheDate.DL.dll
 C:\Users\Osnat\source\repos\SaveTheDateServer\SaveTheDate.DL\obj\Debug\netcoreapp3.1\SaveTheDate.DL.pdb
 C:\Users\Osnat\source\repos\SaveTheDateServer\SaveTheDate.DL\obj\Debug\netcoreapp3.1\SaveTheDate.DL.genruntimeconfig.cache
+C:\Users\הדסה אקרמן\Desktop\פרויקט גמר\SaveTheDate.DL\bin\Debug\netcoreapp3.1\SaveTheDate.DL.deps.json
+C:\Users\הדסה אקרמן\Desktop\פרויקט גמר\SaveTheDate.DL\bin\Debug\netcoreapp3.1\SaveTheDate.DL.runtimeconfig.json
+C:\Users\הדסה אקרמן\Desktop\פרויקט גמר\SaveTheDate.DL\bin\Debug\netcoreapp3.1\SaveTheDate.DL.runtimeconfig.dev.json
+C:\Users\הדסה אקרמן\Desktop\פרויקט גמר\SaveTheDate.DL\bin\Debug\netcoreapp3.1\SaveTheDate.DL.dll
+C:\Users\הדסה אקרמן\Desktop\פרויקט גמר\SaveTheDate.DL\bin\Debug\netcoreapp3.1\SaveTheDate.DL.pdb
+C:\Users\הדסה אקרמן\Desktop\פרויקט גמר\SaveTheDate.DL\obj\Debug\netcoreapp3.1\SaveTheDate.DL.csproj.AssemblyReference.cache
+C:\Users\הדסה אקרמן\Desktop\פרויקט גמר\SaveTheDate.DL\obj\Debug\netcoreapp3.1\SaveTheDate.DL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\הדסה אקרמן\Desktop\פרויקט גמר\SaveTheDate.DL\obj\Debug\netcoreapp3.1\SaveTheDate.DL.AssemblyInfoInputs.cache
+C:\Users\הדסה אקרמן\Desktop\פרויקט גמר\SaveTheDate.DL\obj\Debug\netcoreapp3.1\SaveTheDate.DL.AssemblyInfo.cs
+C:\Users\הדסה אקרמן\Desktop\פרויקט גמר\SaveTheDate.DL\obj\Debug\netcoreapp3.1\SaveTheDate.DL.csproj.CoreCompileInputs.cache
+C:\Users\הדסה אקרמן\Desktop\פרויקט גמר\SaveTheDate.DL\obj\Debug\netcoreapp3.1\SaveTheDate.DL.dll
+C:\Users\הדסה אקרמן\Desktop\פרויקט גמר\SaveTheDate.DL\obj\Debug\netcoreapp3.1\SaveTheDate.DL.pdb
+C:\Users\הדסה אקרמן\Desktop\פרויקט גמר\SaveTheDate.DL\obj\Debug\netcoreapp3.1\SaveTheDate.DL.genruntimeconfig.cache

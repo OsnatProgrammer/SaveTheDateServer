@@ -7,5 +7,6 @@ namespace SaveTheDate.API.Controllers
     [ApiController]
     public class TableController : ControllerBase
     {
+
     }
 }
