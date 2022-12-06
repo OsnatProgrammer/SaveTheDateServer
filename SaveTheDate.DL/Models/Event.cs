@@ -17,7 +17,7 @@ namespace SaveTheDate.DL.Models
 
         public int Id { get; set; }
         public int UserId { get; set; }
-        public string EventType { get; set; }
+        public int EventType { get; set; }
         public DateTime Date { get; set; }
         public string Password { get; set; }
         public string Name { get; set; }
@@ -26,6 +26,7 @@ namespace SaveTheDate.DL.Models
         public string Text { get; set; }
         public string Picture { get; set; }
 
+        public virtual EventType EventTypeNavigation { get; set; }
         public virtual User User { get; set; }
         public virtual ICollection<Bus> Bus { get; set; }
         public virtual ICollection<EventGift> EventGifts { get; set; }

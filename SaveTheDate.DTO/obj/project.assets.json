@@ -5755,11 +5755,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Osnat\\Desktop\\פרויקט גמר\\SaveTheDate.DTO\\SaveTheDate.DTO.csproj",
+      "projectUniqueName": "C:\\Users\\Osnat\\Desktop\\endProject\\SaveTheDateServer\\SaveTheDate.DTO\\SaveTheDate.DTO.csproj",
       "projectName": "SaveTheDate.DTO",
-      "projectPath": "C:\\Users\\Osnat\\Desktop\\פרויקט גמר\\SaveTheDate.DTO\\SaveTheDate.DTO.csproj",
+      "projectPath": "C:\\Users\\Osnat\\Desktop\\endProject\\SaveTheDateServer\\SaveTheDate.DTO\\SaveTheDate.DTO.csproj",
       "packagesPath": "C:\\Users\\Osnat\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Osnat\\Desktop\\פרויקט גמר\\SaveTheDate.DTO\\obj\\",
+      "outputPath": "C:\\Users\\Osnat\\Desktop\\endProject\\SaveTheDateServer\\SaveTheDate.DTO\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Osnat\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5776,8 +5776,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Osnat\\Desktop\\פרויקט גמר\\SaveTheDate.DL\\SaveTheDate.DL.csproj": {
-              "projectPath": "C:\\Users\\Osnat\\Desktop\\פרויקט גמר\\SaveTheDate.DL\\SaveTheDate.DL.csproj"
+            "C:\\Users\\Osnat\\Desktop\\endProject\\SaveTheDateServer\\SaveTheDate.DL\\SaveTheDate.DL.csproj": {
+              "projectPath": "C:\\Users\\Osnat\\Desktop\\endProject\\SaveTheDateServer\\SaveTheDate.DL\\SaveTheDate.DL.csproj"
             }
           }
         }

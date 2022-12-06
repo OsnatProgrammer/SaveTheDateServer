@@ -10,7 +10,7 @@ namespace SaveTheDate.DTO
         public AutoMapperProfile()
         {
             CreateMap <BusDTO, Bus> ();
-            CreateMap<BusDTO, Bus>();
+            CreateMap<Bus, BusDTO>();
 
             CreateMap<EventDTO, Event>();
             CreateMap<Event, EventDTO>();

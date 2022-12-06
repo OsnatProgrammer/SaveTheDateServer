@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7kdT7xvW/QAyJJpvLQylg/rK3y47AWLBljFSWLvLKJe8gZ/w/BmUXYybz9d8680YJcwB35yOISB8DImVxJz/9Q==",
+  "dgSpecHash": "uPRpGZAVE7RmPw1Q37mcrsTXH9AHoJu0wvE1mr9Ce1hfB8oJUsus4U6+b0QTp7Tq6J1exCMAmmbAYp1eJxCpwQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Osnat\\Desktop\\פרויקט גמר\\SaveTheDate\\SaveTheDate.API.csproj",
+  "projectFilePath": "C:\\Users\\Osnat\\Desktop\\endProject\\SaveTheDateServer\\SaveTheDate\\SaveTheDate.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Osnat\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\Osnat\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

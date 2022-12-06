@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Osnat\\Desktop\\פרויקט גמר\\SaveTheDate.DL\\SaveTheDate.DL.csproj": {}
+    "C:\\Users\\Osnat\\Desktop\\endProject\\SaveTheDateServer\\SaveTheDate.DL\\SaveTheDate.DL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Osnat\\Desktop\\פרויקט גמר\\SaveTheDate.DL\\SaveTheDate.DL.csproj": {
+    "C:\\Users\\Osnat\\Desktop\\endProject\\SaveTheDateServer\\SaveTheDate.DL\\SaveTheDate.DL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Osnat\\Desktop\\פרויקט גמר\\SaveTheDate.DL\\SaveTheDate.DL.csproj",
+        "projectUniqueName": "C:\\Users\\Osnat\\Desktop\\endProject\\SaveTheDateServer\\SaveTheDate.DL\\SaveTheDate.DL.csproj",
         "projectName": "SaveTheDate.DL",
-        "projectPath": "C:\\Users\\Osnat\\Desktop\\פרויקט גמר\\SaveTheDate.DL\\SaveTheDate.DL.csproj",
+        "projectPath": "C:\\Users\\Osnat\\Desktop\\endProject\\SaveTheDateServer\\SaveTheDate.DL\\SaveTheDate.DL.csproj",
         "packagesPath": "C:\\Users\\Osnat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Osnat\\Desktop\\פרויקט גמר\\SaveTheDate.DL\\obj\\",
+        "outputPath": "C:\\Users\\Osnat\\Desktop\\endProject\\SaveTheDateServer\\SaveTheDate.DL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Osnat\\AppData\\Roaming\\NuGet\\NuGet.Config",

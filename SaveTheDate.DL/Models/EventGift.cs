@@ -13,16 +13,16 @@ namespace SaveTheDate.DL.Models
         }
 
         public int Id { get; set; }
-        public int GiftsId { get; set; }
+        public int? GiftId { get; set; }
         public int EventId { get; set; }
-        public int UserId { get; set; }
-        public bool Status { get; set; }
+        public int? UserId { get; set; }
+        public bool? Status { get; set; }
         public string Blessing { get; set; }
+        public string NewGift { get; set; }
 
         public virtual Event Event { get; set; }
-        public virtual Gift Gifts { get; set; }
-        public virtual Guest User { get; set; }
-        public virtual User UserNavigation { get; set; }
+        public virtual Gift Gift { get; set; }
+        public virtual User User { get; set; }
         public virtual ICollection<Guest> Guests { get; set; }
     }
 }

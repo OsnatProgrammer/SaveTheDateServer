@@ -11,3 +11,16 @@ C:\Users\Osnat\Desktop\פרויקט גמר\SaveTheDate.DL\obj\Debug\netcoreapp3.
 C:\Users\Osnat\Desktop\פרויקט גמר\SaveTheDate.DL\obj\Debug\netcoreapp3.1\SaveTheDate.DL.dll
 C:\Users\Osnat\Desktop\פרויקט גמר\SaveTheDate.DL\obj\Debug\netcoreapp3.1\SaveTheDate.DL.pdb
 C:\Users\Osnat\Desktop\פרויקט גמר\SaveTheDate.DL\obj\Debug\netcoreapp3.1\SaveTheDate.DL.genruntimeconfig.cache
+C:\Users\Osnat\Desktop\endProject\SaveTheDateServer\SaveTheDate.DL\bin\Debug\netcoreapp3.1\SaveTheDate.DL.deps.json
+C:\Users\Osnat\Desktop\endProject\SaveTheDateServer\SaveTheDate.DL\bin\Debug\netcoreapp3.1\SaveTheDate.DL.runtimeconfig.json
+C:\Users\Osnat\Desktop\endProject\SaveTheDateServer\SaveTheDate.DL\bin\Debug\netcoreapp3.1\SaveTheDate.DL.runtimeconfig.dev.json
+C:\Users\Osnat\Desktop\endProject\SaveTheDateServer\SaveTheDate.DL\bin\Debug\netcoreapp3.1\SaveTheDate.DL.dll
+C:\Users\Osnat\Desktop\endProject\SaveTheDateServer\SaveTheDate.DL\bin\Debug\netcoreapp3.1\SaveTheDate.DL.pdb
+C:\Users\Osnat\Desktop\endProject\SaveTheDateServer\SaveTheDate.DL\obj\Debug\netcoreapp3.1\SaveTheDate.DL.csproj.AssemblyReference.cache
+C:\Users\Osnat\Desktop\endProject\SaveTheDateServer\SaveTheDate.DL\obj\Debug\netcoreapp3.1\SaveTheDate.DL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Osnat\Desktop\endProject\SaveTheDateServer\SaveTheDate.DL\obj\Debug\netcoreapp3.1\SaveTheDate.DL.AssemblyInfoInputs.cache
+C:\Users\Osnat\Desktop\endProject\SaveTheDateServer\SaveTheDate.DL\obj\Debug\netcoreapp3.1\SaveTheDate.DL.AssemblyInfo.cs
+C:\Users\Osnat\Desktop\endProject\SaveTheDateServer\SaveTheDate.DL\obj\Debug\netcoreapp3.1\SaveTheDate.DL.csproj.CoreCompileInputs.cache
+C:\Users\Osnat\Desktop\endProject\SaveTheDateServer\SaveTheDate.DL\obj\Debug\netcoreapp3.1\SaveTheDate.DL.dll
+C:\Users\Osnat\Desktop\endProject\SaveTheDateServer\SaveTheDate.DL\obj\Debug\netcoreapp3.1\SaveTheDate.DL.pdb
+C:\Users\Osnat\Desktop\endProject\SaveTheDateServer\SaveTheDate.DL\obj\Debug\netcoreapp3.1\SaveTheDate.DL.genruntimeconfig.cache

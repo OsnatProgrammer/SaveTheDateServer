@@ -67,10 +67,6 @@ namespace SaveTheDate.DL.Models
 
                 entity.Property(e => e.Date).HasColumnType("datetime");
 
-                entity.Property(e => e.EventType)
-                    .IsRequired()
-                    .HasMaxLength(50);
-
                 entity.Property(e => e.Link)
                     .IsRequired()
                     .HasMaxLength(50);
@@ -95,6 +91,12 @@ namespace SaveTheDate.DL.Models
 
                 entity.Property(e => e.UserId).HasColumnName("UserID");
 
+                entity.HasOne(d => d.EventTypeNavigation)
+                    .WithMany(p => p.Events)
+                    .HasForeignKey(d => d.EventType)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Event_EventType");
+
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.Events)
                     .HasForeignKey(d => d.UserId)
@@ -106,11 +108,11 @@ namespace SaveTheDate.DL.Models
             {
                 entity.Property(e => e.Id).HasColumnName("ID");
 
-                entity.Property(e => e.Blessing)
-                    .IsRequired()
-                    .HasMaxLength(50);
+                entity.Property(e => e.Blessing).HasMaxLength(50);
 
-                entity.Property(e => e.GiftsId).HasColumnName("GiftsID");
+                entity.Property(e => e.GiftId).HasColumnName("GiftID");
+
+                entity.Property(e => e.NewGift).HasMaxLength(50);
 
                 entity.HasOne(d => d.Event)
                     .WithMany(p => p.EventGifts)
@@ -118,22 +120,14 @@ namespace SaveTheDate.DL.Models
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_EventGifts_Event");
 
-                entity.HasOne(d => d.Gifts)
+                entity.HasOne(d => d.Gift)
                     .WithMany(p => p.EventGifts)
-                    .HasForeignKey(d => d.GiftsId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasForeignKey(d => d.GiftId)
                     .HasConstraintName("FK_EventGifts_Gifts");
 
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.EventGifts)
                     .HasForeignKey(d => d.UserId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_EventGifts_Guests");
-
-                entity.HasOne(d => d.UserNavigation)
-                    .WithMany(p => p.EventGifts)
-                    .HasForeignKey(d => d.UserId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_EventGifts_User");
             });
 
@@ -243,7 +237,7 @@ namespace SaveTheDate.DL.Models
 
                 entity.Property(e => e.Email)
                     .IsRequired()
-                    .HasMaxLength(10)
+                    .HasMaxLength(20)
                     .IsUnicode(false);
 
                 entity.Property(e => e.Name)
