@@ -41,8 +41,6 @@ namespace SaveTheDate.DL
         // הוספת מתנה שאין ברשימת המתנות.
 
 
-        // מחיקת מתנה מרשימה שמגיעה מהדטה בייס.
-
         public bool AddGift(Gift newGift)
         {
             try
@@ -56,6 +54,8 @@ namespace SaveTheDate.DL
                 throw ex;
             }
         }
+
+        // מחיקת מתנה מרשימה שמגיעה מהדטה בייס.
 
         public bool DeleteGift(string giftID)
         {
