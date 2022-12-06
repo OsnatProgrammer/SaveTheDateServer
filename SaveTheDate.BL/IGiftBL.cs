@@ -1,4 +1,5 @@
 ﻿using SaveTheDate.DL.Models;
+using SaveTheDate.DTO;
 using System.Collections.Generic;
 
 namespace SaveTheDate.BL
@@ -8,4 +9,6 @@ namespace SaveTheDate.BL
         List<Gift> GetAllGift();
         List<Gift> GetGiftsByEventType(int eventType);
     }
+
+
 }

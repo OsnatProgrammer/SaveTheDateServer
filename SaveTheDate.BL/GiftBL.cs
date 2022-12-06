@@ -5,6 +5,7 @@ using SaveTheDate.DTO;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using SaveTheDate.DL.Models;
 
 namespace SaveTheDate.BL
 {
