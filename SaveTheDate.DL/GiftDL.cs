@@ -37,12 +37,6 @@ namespace SaveTheDate.DL
         }
 
 
-        //שליפת מתנות שהתקבלו באירוע הזה עד כה.
-
-
-        //שליפת המתנות שלא התקבלו לאירוע עד עכשיו.
-
-
 
         // הוספת מתנה שאין ברשימת המתנות.
 
@@ -62,6 +56,7 @@ namespace SaveTheDate.DL
                 throw ex;
             }
         }
+
         public bool DeleteGift(string giftID)
         {
             try
@@ -77,8 +72,16 @@ namespace SaveTheDate.DL
             }
         }
 
-
-
-
+        public Gift GetGiftById(int v)
+        {
+            try
+            {
+                return SaveTheDateContext.Gifts.SingleOrDefault(x => x.Id == v);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

@@ -38,17 +38,20 @@ namespace SaveTheDate.BL
             return mapper.Map<List<Gift>, List<GiftDTO>>(Gift);
         }
 
-        public bool AddGift(GiftDTO NewGiftDTO)
+        public bool AddGift(GiftDTO newGiftDTO)
         {
             Gift Gift = mapper.Map<GiftDTO, Gift>(NewGiftDTO);
             return _giftDL.AddGift(Gift);
         }
 
-        public bool DeleteGift(string CoronaCode)
+        public bool DeleteGift(string giftID)
         {
-            return _giftDL.DeleteGift(CoronaCode);
+            return _giftDL.DeleteGift(giftID);
         }
 
-
+        public Gift GetGiftById(int v)
+        {
+            return GiftDL.GetGiftById(v);
+        }
     }
 }

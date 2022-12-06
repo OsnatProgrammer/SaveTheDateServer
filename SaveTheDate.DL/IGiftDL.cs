@@ -6,9 +6,9 @@ namespace SaveTheDate.DL
     public interface IGiftDL
     {
         List<Gift> GetAllGift();
-        public bool DeleteGift(string giftID);
-        public bool AddGift(Gift newGift);
-        public List<Gift> GetGiftsByEventType(int eventType);
-
+        bool DeleteGift(string giftID);
+        bool AddGift(Gift newGift);
+        List<Gift> GetGiftsByEventType(int eventType);
+        Gift GetGiftById(int v);
     }
 }
