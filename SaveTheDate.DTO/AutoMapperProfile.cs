@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using SaveTheDate.DL.Models;
+using SaveTheDate.DTO;
 
 namespace SaveTheDate.DTO
 {
@@ -37,5 +38,5 @@ namespace SaveTheDate.DTO
             CreateMap<User, UserDTO>();
 
         }
-        }
+    } 
 }

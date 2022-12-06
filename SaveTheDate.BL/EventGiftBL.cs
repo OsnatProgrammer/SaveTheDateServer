@@ -11,12 +11,12 @@ namespace SaveTheDate.BL
     public class EventGiftBL : IEventGiftBL
     {
 
-        IEventGiftDL EventGiftDL;
+        IEventGiftDL _eventGiftDL;
         IMapper mapper;
 
         public EventGiftBL(IEventGiftDL EventGiftDL)
         {
-            this.EventGiftDL = EventGiftDL;
+            _eventGiftDL = EventGiftDL;
             var config = new MapperConfiguration(cfg =>
             {
                 cfg.AddProfile<AutoMapperProfile>();
@@ -33,14 +33,14 @@ namespace SaveTheDate.BL
         public List<EventGift> GetAllGivenGifts(int id)
         {
 
-            return EventGiftDL.GetAllGivenGifts(id);
+            return _eventGiftDL.GetAllGivenGifts(id);
         }
 
         //GET
         //שליפת כל המתנות שלא התקבלו
         public List<EventGift> GetAllUnGivenGifts(int id)
         {
-            return EventGiftDL.GetAllUnGivenGifts(id);
+            return _eventGiftDL.GetAllUnGivenGifts(id);
         }
 
         //PUT
@@ -50,7 +50,7 @@ namespace SaveTheDate.BL
         //ומכניס את הברכה המצורפת לטבלה
         public bool GetAGiftFromGuest(int EventGiftID, int userId, string blessing)
         {
-            return EventGiftDL.GetAGiftFromGuest(EventGiftID, userId, blessing);
+            return _eventGiftDL.GetAGiftFromGuest(EventGiftID, userId, blessing);
         }
     }
 }

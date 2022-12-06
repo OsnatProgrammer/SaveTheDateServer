@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿
+using AutoMapper;
 using SaveTheDate.DL;
 using SaveTheDate.DL.Models;
 using SaveTheDate.DTO;
@@ -10,12 +11,12 @@ namespace SaveTheDate.BL
 {
     public class BusBL : IBusBL
     {
-        IBusDL BusDL;
+        IBusDL _busDL;
         IMapper mapper;
 
         public BusBL(IBusDL BusDL)
         {
-            this.BusDL = BusDL;
+            _busDL = BusDL;
             var config = new MapperConfiguration(cfg =>
             {
                 cfg.AddProfile<AutoMapperProfile>();
@@ -24,11 +25,15 @@ namespace SaveTheDate.BL
             mapper = config.CreateMapper();
         }
 
-        public int GetSumPersonInBus(int busNumber)
+        public List<Bus> GetAllBus()
         {
-            return BusDL.GetSumPersonInBus(busNumber);
+            return _busDL.GetAllBus();
         }
 
+        public int GetSumPersonInBus(int busNumber)
+        {
+            return _busDL.GetSumPersonInBus(busNumber);
+        }
 
     }
 }

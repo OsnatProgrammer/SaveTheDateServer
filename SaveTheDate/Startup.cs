@@ -57,36 +57,6 @@ namespace SaveTheDate
             //services.AddScoped<IUserDL, UserDL>();
             //services.AddScoped<IUserBL, UserBL>();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "SaveTheDate", Version = "v1" });
@@ -101,7 +71,6 @@ namespace SaveTheDate
                     .AllowAnyMethod();
                 });
             });
-
 
 
         }

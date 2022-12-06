@@ -24,6 +24,11 @@ namespace SaveTheDate.DL
             }
         }
 
+        public Gift GetGiftById(int v)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Gift> GetGiftsByEventType(int eventType)
         {
             try

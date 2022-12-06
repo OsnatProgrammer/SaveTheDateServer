@@ -76,13 +76,6 @@ namespace SaveTheDate.API.Controllers
             }
         }
 
-
-
-
-
-
-
-
         //  public ActionResult<EventGift> GetEventGiftById(int EventGiftID)
         //  {
         //      try
