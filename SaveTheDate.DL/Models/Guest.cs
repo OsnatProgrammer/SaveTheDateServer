@@ -7,11 +7,6 @@ namespace SaveTheDate.DL.Models
 {
     public partial class Guest
     {
-        public Guest()
-        {
-            EventGifts = new HashSet<EventGift>();
-        }
-
         public int Id { get; set; }
         public int UserId { get; set; }
         public int EventId { get; set; }
@@ -25,6 +20,5 @@ namespace SaveTheDate.DL.Models
         public virtual EventGift Gift { get; set; }
         public virtual Table TableNumNavigation { get; set; }
         public virtual User User { get; set; }
-        public virtual ICollection<EventGift> EventGifts { get; set; }
     }
 }

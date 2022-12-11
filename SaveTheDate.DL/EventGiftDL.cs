@@ -6,16 +6,20 @@ using System.Text;
 
 namespace SaveTheDate.DL
 {
-    public class EventEventGiftsDL
+    public class EventGiftDL : IEventGiftDL
     {
         SaveTheDateContext SaveTheDateContext = new SaveTheDateContext();
 
-
-        public List<EventGift> GetAllEventGifts()
+        //GET
+        //אותה פונקציה תשמש גם ל:
+        //שליפת כל המתנות שהתקבלו ופרטיהם
+        //וגם לשליפת הברכות שהתקבלו על המתנה
+        //הקריאה תהיה מאנגולר
+        public List<EventGift> GetAllGivenGifts(int id)
         {
             try
             {
-                return SaveTheDateContext.EventGifts.ToList();
+                return SaveTheDateContext.EventGifts.Where(x => x.EventId == id && x.Status == true).ToList();
             }
             catch (Exception ex)
             {
@@ -23,48 +27,35 @@ namespace SaveTheDate.DL
             }
         }
 
-
-        // GET
-        // שליפה אירוע 
-        public Event GetEventById(int eventID)
+        //GET
+        //שליפת כל המתנות שלא התקבלו
+        public List<EventGift> GetAllUnGivenGifts(int id)
         {
             try
             {
-                return SaveTheDateContext.Events.SingleOrDefault(x => x.Id == eventID);
+                return SaveTheDateContext.EventGifts.Where(x => x.EventId == id && x.Status == false).ToList();
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
-
-
-
-        //POST
-        // הוספת אירוע.
-        public bool AddEvent(Event newEvent)
-        {
-            try
-            {
-                SaveTheDateContext.Add(newEvent);
-                SaveTheDateContext.SaveChanges();
-                return true;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
 
         //PUT
-        //עדכון פרטי אירוע
-        public bool UpdateEvent(int eventID, Event myEvent)
+        //הכנסת ברכה ועדכון שהמתנה תפוסה
+        //מקבל את ה מזהה של המתנה מתוך רשימת המתנות שהמזמין בחר
+        //וכן מקבל את שם האורח שהביא את המתנה במקרה זה היוזר הוא מביא המתנה
+        //ומכניס את הברכה המצורפת לטבלה
+        public bool GetAGiftFromGuest(int eventGiftID, int userId, string blessing)
         {
             try
             {
-                Event currentEventToUpdate = SaveTheDateContext.Events.SingleOrDefault(x => x.Id == eventID);
-                SaveTheDateContext.Entry(currentEventToUpdate).CurrentValues.SetValues(myEvent);
+                EventGift currentEventGiftToUpdate = SaveTheDateContext.EventGifts.SingleOrDefault(x => x.Id == eventGiftID);
+                EventGift newGift = new EventGift();
+                newGift.Id = eventGiftID; newGift.GiftId = currentEventGiftToUpdate.GiftId; newGift.EventId = currentEventGiftToUpdate.EventId;
+                newGift.UserId = userId; newGift.Status = true; newGift.Blessing = blessing;
+
+                SaveTheDateContext.Entry(currentEventGiftToUpdate).CurrentValues.SetValues(newGift);
                 SaveTheDateContext.SaveChanges();
                 return true;
             }
@@ -74,10 +65,57 @@ namespace SaveTheDate.DL
             }
         }
 
+//------------------------------------------------------------------------------------------------
 
 
+        // הוספת מתנה שאין ברשימת המתנות.
 
+        public bool AddGift(Gift newGift)
+        {
+            try
+            {
+                SaveTheDateContext.Add(newGift);
+                SaveTheDateContext.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        // מחיקת מתנה מרשימה שמגיעה מהדטה בייס.
+
+        public bool DeleteGift(string giftID)
+        {
+            try
+            {
+                Gift currentGiftToDelete = SaveTheDateContext.Gifts.SingleOrDefault(x => x.Id == int.Parse(giftID));
+                SaveTheDateContext.Remove(currentGiftToDelete);
+                SaveTheDateContext.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public Gift GetGiftById(int v)
+        {
+            try
+            {
+                return SaveTheDateContext.Gifts.SingleOrDefault(x => x.Id == v);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 
-    }
+
+
 }
+
+

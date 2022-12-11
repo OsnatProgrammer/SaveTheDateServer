@@ -12,11 +12,11 @@ namespace SaveTheDate.API.Controllers
     public class EventController : ControllerBase
     {
 
-        private IEventBL EventBL;
+        private IEventBL _eventBL;
 
         public EventController(IEventBL EventBL)
         {
-            this.EventBL = EventBL;
+            _eventBL = EventBL;
         }
 
 
@@ -26,7 +26,7 @@ namespace SaveTheDate.API.Controllers
         {
             try
             {
-                return EventBL.GetEventById(int.Parse(id));
+                return _eventBL.GetEventById(int.Parse(id));
             }
             catch (Exception ex)
             {
@@ -41,7 +41,7 @@ namespace SaveTheDate.API.Controllers
         {
             try
             {
-                return EventBL.AddEvent(myEvent);
+                return _eventBL.AddEvent(myEvent);
             }
             catch (Exception ex)
             {
@@ -56,14 +56,12 @@ namespace SaveTheDate.API.Controllers
         {
             try
             {
-                return EventBL.UpdateEvent(int.Parse(eventID), myEvent);
+                return _eventBL.UpdateEvent(int.Parse(eventID), myEvent);
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
-
-
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using SaveTheDate.DL.Models;
+using SaveTheDate.DTO;
 
 namespace SaveTheDate.DTO
 {
@@ -10,7 +11,7 @@ namespace SaveTheDate.DTO
         public AutoMapperProfile()
         {
             CreateMap <BusDTO, Bus> ();
-            CreateMap<Bus, BusDTO > ();
+            CreateMap<Bus, BusDTO>();
 
             CreateMap<EventDTO, Event>();
             CreateMap<Event, EventDTO>();
@@ -37,5 +38,5 @@ namespace SaveTheDate.DTO
             CreateMap<User, UserDTO>();
 
         }
-        }
+    } 
 }

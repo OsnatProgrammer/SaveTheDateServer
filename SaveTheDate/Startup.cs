@@ -33,8 +33,29 @@ namespace SaveTheDate
             services.AddScoped<IEventDL, EventDL>();
             services.AddScoped<IEventBL, EventBL>();
 
+            services.AddScoped<IBusDL, BusDL>();
+            services.AddScoped<IBusBL, BusBL>();
+
+            services.AddScoped<IEventGiftDL, EventGiftDL>();
+            services.AddScoped<IEventGiftBL, EventGiftBL>();
+
+             services.AddScoped<IEventTypeDL, EventTypeDL>();
+             services.AddScoped<IEventTypeBL, EventTypeBL>();
+
+            services.AddScoped<IGiftCategoryDL, GiftCategoryDL>();
+            services.AddScoped<IGiftCategoryBL, GiftCategoryBL>();
+
             services.AddScoped<IGiftDL, GiftDL>();
             services.AddScoped<IGiftBL, GiftBL>();
+
+             services.AddScoped<IGuestDL, GuestDL>();
+             services.AddScoped<IGuestBL, GuestBL>();
+
+            services.AddScoped<ITableDL, TableDL>();
+            services.AddScoped<ITableBL, TableBL>();
+
+            services.AddScoped<IUserDL, UserDL>();
+            services.AddScoped<IUserBL, UserBL>();
 
             services.AddSwaggerGen(c =>
             {
@@ -50,7 +71,6 @@ namespace SaveTheDate
                     .AllowAnyMethod();
                 });
             });
-
 
 
         }
