@@ -39,23 +39,23 @@ namespace SaveTheDate
             services.AddScoped<IEventGiftDL, EventGiftDL>();
             services.AddScoped<IEventGiftBL, EventGiftBL>();
 
-            // services.AddScoped<IEventTypeDL, EventTypeDL>();
-            // services.AddScoped<IEventTypeBL, EventTypeBL>();
+             services.AddScoped<IEventTypeDL, EventTypeDL>();
+             services.AddScoped<IEventTypeBL, EventTypeBL>();
 
-            //services.AddScoped<IGiftCategoryDL, GiftCategoryDL>();
-            //services.AddScoped<IGiftCategoryBL, GiftCategoryBL>();
+            services.AddScoped<IGiftCategoryDL, GiftCategoryDL>();
+            services.AddScoped<IGiftCategoryBL, GiftCategoryBL>();
 
             services.AddScoped<IGiftDL, GiftDL>();
             services.AddScoped<IGiftBL, GiftBL>();
 
-            // services.AddScoped<IGuestDL, GuestDL>();
-            // services.AddScoped<IGuestBL, GuestBL>();
+             services.AddScoped<IGuestDL, GuestDL>();
+             services.AddScoped<IGuestBL, GuestBL>();
 
-            //services.AddScoped<ITableDL, TableDL>();
-            //services.AddScoped<ITableBL, TableBL>();
+            services.AddScoped<ITableDL, TableDL>();
+            services.AddScoped<ITableBL, TableBL>();
 
-            //services.AddScoped<IUserDL, UserDL>();
-            //services.AddScoped<IUserBL, UserBL>();
+            services.AddScoped<IUserDL, UserDL>();
+            services.AddScoped<IUserBL, UserBL>();
 
             services.AddSwaggerGen(c =>
             {
