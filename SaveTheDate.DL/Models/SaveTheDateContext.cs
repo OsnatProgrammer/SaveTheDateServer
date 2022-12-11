@@ -108,11 +108,11 @@ namespace SaveTheDate.DL.Models
             {
                 entity.Property(e => e.Id).HasColumnName("ID");
 
-                entity.Property(e => e.Blessing)
-                    .IsRequired()
-                    .HasMaxLength(50);
+                entity.Property(e => e.Blessing).HasMaxLength(50);
 
                 entity.Property(e => e.GiftId).HasColumnName("GiftID");
+
+                entity.Property(e => e.NewGift).HasMaxLength(50);
 
                 entity.HasOne(d => d.Event)
                     .WithMany(p => p.EventGifts)
@@ -123,19 +123,11 @@ namespace SaveTheDate.DL.Models
                 entity.HasOne(d => d.Gift)
                     .WithMany(p => p.EventGifts)
                     .HasForeignKey(d => d.GiftId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_EventGifts_Gifts");
 
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.EventGifts)
                     .HasForeignKey(d => d.UserId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_EventGifts_Guests");
-
-                entity.HasOne(d => d.UserNavigation)
-                    .WithMany(p => p.EventGifts)
-                    .HasForeignKey(d => d.UserId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_EventGifts_User");
             });
 
