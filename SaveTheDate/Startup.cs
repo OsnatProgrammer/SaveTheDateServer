@@ -13,6 +13,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Newtonsoft.Json.Serialization;
+
 
 namespace SaveTheDate
 {
@@ -39,11 +41,11 @@ namespace SaveTheDate
             services.AddScoped<IEventGiftDL, EventGiftDL>();
             services.AddScoped<IEventGiftBL, EventGiftBL>();
 
-             services.AddScoped<IEventTypeDL, EventTypeDL>();
-             services.AddScoped<IEventTypeBL, EventTypeBL>();
+            // services.AddScoped<IEventTypeDL, EventTypeDL>();
+            // services.AddScoped<IEventTypeBL, EventTypeBL>();
 
-            services.AddScoped<IGiftCategoryDL, GiftCategoryDL>();
-            services.AddScoped<IGiftCategoryBL, GiftCategoryBL>();
+            //services.AddScoped<IGiftCategoryDL, GiftCategoryDL>();
+            //services.AddScoped<IGiftCategoryBL, GiftCategoryBL>();
 
             services.AddScoped<IGiftDL, GiftDL>();
             services.AddScoped<IGiftBL, GiftBL>();
@@ -54,8 +56,8 @@ namespace SaveTheDate
             services.AddScoped<ITableDL, TableDL>();
             services.AddScoped<ITableBL, TableBL>();
 
-            services.AddScoped<IUserDL, UserDL>();
-            services.AddScoped<IUserBL, UserBL>();
+           // services.AddScoped<IUserDL, UserDL>();
+           // services.AddScoped<IUserBL, UserBL>();
 
             services.AddSwaggerGen(c =>
             {
@@ -72,8 +74,17 @@ namespace SaveTheDate
                 });
             });
 
+            //JSON
+            services.AddControllersWithViews().AddNewtonsoftJson(options =>
+
+            options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore).
+                AddNewtonsoftJson(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
+
 
         }
+
+
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

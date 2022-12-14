@@ -30,7 +30,6 @@ namespace SaveTheDate.BL
         {
             Table myTable = mapper.Map<TableDTO, Table>(newTable);
             return _tableDL.AddTable(myTable);
-
         }
 
         //DELETE
@@ -51,11 +50,7 @@ namespace SaveTheDate.BL
             return _tableDL.GetNotTakePlaceGuests(eventId);
 
         }
-        public int GetTableByPhone(string phone, int eventId)
-        {
-            return _tableDL.GetTableByPhone(phone, eventId);
 
-        }
         public List<Guest> GetTakePlaceGuests(int eventId)
         {
             return _tableDL.GetTakePlaceGuests(eventId);

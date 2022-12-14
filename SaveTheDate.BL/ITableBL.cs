@@ -10,7 +10,7 @@ namespace SaveTheDate.BL
         bool DeleteTable(int id);
         List<Table> GetAllTablesOfEvent(int eventId);
         List<Guest> GetNotTakePlaceGuests(int eventId);
-        int GetTableByPhone(string phone, int eventId);
+
         List<Guest> GetTakePlaceGuests(int eventId);
         List<Guest> GuestsInTable(int tableNum);
         bool UpdateGuestToTable(int guestId, int tableNum);

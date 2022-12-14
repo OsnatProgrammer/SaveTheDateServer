@@ -57,9 +57,10 @@ namespace SaveTheDate.BL
         }
 
         //POST
-        public bool AddBus(Bus newBus)
+        public bool AddBus(BusDTO newBusDTO)
         {
-            return _busDL.AddBus(newBus);
+            Bus myBus = mapper.Map<BusDTO, Bus>(newBusDTO);
+            return _busDL.AddBus(myBus);
         }
 
         //DELETE

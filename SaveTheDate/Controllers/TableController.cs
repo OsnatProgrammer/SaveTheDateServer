@@ -18,12 +18,8 @@ namespace SaveTheDate.API.Controllers
             _tableBL = TableBL;
         }
 
-        
-        
-
-
         [HttpGet]
-        [Route("GetAllTablesOfEvent/{id}")]
+        [Route("GetAllTablesOfEvent/{eventId}")]
         public IActionResult  GetAllTablesOfEvent(int eventId)
         {
             try
@@ -37,7 +33,7 @@ namespace SaveTheDate.API.Controllers
         }
 
         [HttpGet]
-        [Route("GetNotTakePlaceGuests/{id}")]
+        [Route("GetNotTakePlaceGuests/{eventId}")]
         public IActionResult GetNotTakePlaceGuests(int eventId)
         {
             try
@@ -50,9 +46,8 @@ namespace SaveTheDate.API.Controllers
             }
         }
 
-
         [HttpGet]
-        [Route("GetTakePlaceGuests/{id}")]
+        [Route("GetTakePlaceGuests/{eventId}")]
         public IActionResult GetTakePlaceGuests(int eventId)
         {
             try
@@ -64,22 +59,6 @@ namespace SaveTheDate.API.Controllers
                 return StatusCode(500, ex.Message);
             }
         }
-
-        [HttpGet]
-        [Route("GetTableByPhone/{id}")]
-        public IActionResult GetTableByPhone(string phone, int eventId)
-        {
-            try
-            {
-                return Ok(_tableBL.GetTableByPhone( phone,  eventId));
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, ex.Message);
-            }
-        }
-
-
 
         [HttpGet]
         [Route("GuestsInTable/{tableNum}")]
@@ -95,7 +74,6 @@ namespace SaveTheDate.API.Controllers
             }
         }
 
-
         [HttpPost]
         [Route("AddTable")]
         public bool AddTable(TableDTO newTable)
@@ -110,6 +88,19 @@ namespace SaveTheDate.API.Controllers
             }
         }
 
+        [HttpPut]
+        [Route("UpdateGuestToTable/{guestId},{tableNum}")]
+        public bool UpdateGuestToTable(int guestId, int tableNum)
+        {
+            try
+            {
+                return _tableBL.UpdateGuestToTable(guestId, tableNum);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
         [HttpDelete]
         [Route("DeleteTable/{id}")]
@@ -124,8 +115,5 @@ namespace SaveTheDate.API.Controllers
                 throw ex;
             }
         }
-
-
-
     }
 }

@@ -7,7 +7,6 @@ namespace SaveTheDate.DL
     {
 
         List<Gift> GetAllGift();
-        Gift GetGiftById(int v);
-        public List<Gift> GetGiftsByEventType(int eventType);
+        List<Gift> GetGiftsByEventType(int eventType);
     }
 }

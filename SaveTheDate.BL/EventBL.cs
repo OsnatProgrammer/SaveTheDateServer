@@ -27,7 +27,6 @@ namespace SaveTheDate.BL
 
         public Event GetEventById(int eventID)
         {
-;
             return _eventDL.GetEventById(eventID);
         }
 

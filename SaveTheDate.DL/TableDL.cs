@@ -25,21 +25,7 @@ namespace SaveTheDate.DL
             }
         }
 
-        // שליפת השולחן ישיבה לפי מספר טלפון 
-        public int GetTableByPhone(string phone, int eventId)
-        {
-            try
-            {
-                User myUser = SaveTheDateContext.Users.SingleOrDefault(x => x.Phone.Equals(phone));
-                Guest myGuest = SaveTheDateContext.Guests.SingleOrDefault(x => x.UserId.Equals(myUser.Id) && x.EventId == eventId);
-                return (int)myGuest.TableNum;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
+     
         //שליפת המוזמנים ששובצו
         public List<Guest> GetTakePlaceGuests(int eventId)
         {
@@ -76,7 +62,7 @@ namespace SaveTheDate.DL
 
 
         //שליפת כל שולחן עם שמות המוזמנים היושבים בו 
-
+        // השליפה של מקומות פנויים תעשה באנגולר
         public List<Guest> GuestsInTable(int tableNum)
         {
             try

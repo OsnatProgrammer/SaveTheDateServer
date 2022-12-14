@@ -2,11 +2,13 @@
 using Microsoft.AspNetCore.Mvc;
 using SaveTheDate.BL;
 using SaveTheDate.DL.Models;
+using SaveTheDate.DTO;
 using System;
 using System.Collections.Generic;
 
 namespace SaveTheDate.API.Controllers
 {
+
     [Route("api/[controller]")]
     [ApiController]
     public class BusController : ControllerBase
@@ -18,66 +20,66 @@ namespace SaveTheDate.API.Controllers
             _busBL = BusBL;
         }
 
-
         [HttpGet]
         [Route("GetAllBus")]
-        public List<Bus> GetAllBus() 
+        public IActionResult GetAllBus()
         {
             try
             {
-                return _busBL.GetAllBus();
+                return
+                 Ok(_busBL.GetAllBus());
             }
             catch (Exception ex)
             {
-                throw ex;
+                return StatusCode(500, ex.Message);
             }
         }
 
         [HttpGet]
         [Route("GetAllBusesOfEvent")]
-        public List<Bus> GetAllBusesOfEvent(int eventId)
+        public IActionResult GetAllBusesOfEvent(int eventId)
         {
             try
             {
-                return _busBL.GetAllBusesOfEvent(eventId);
+                return Ok(_busBL.GetAllBusesOfEvent(eventId));
             }
             catch (Exception ex)
             {
-                throw ex;
+                return StatusCode(500, ex.Message);
             }
         }
 
         [HttpGet]
         [Route("GetSumPersonInBus")]
-        public int GetSumPersonInBus(int busNumber)
+        public IActionResult GetSumPersonInBus(int busNumber)
         {
             try
             {
-                return _busBL.GetSumPersonInBus(busNumber);
+                return Ok(_busBL.GetSumPersonInBus(busNumber));
             }
             catch (Exception ex)
             {
-                throw ex;
+                return StatusCode(500, ex.Message);
             }
         }
 
         [HttpGet]
         [Route("EmptySeatsOnTheBus")]
-        public int EmptySeatsOnTheBus(int busNumber)
+        public IActionResult EmptySeatsOnTheBus(int busNumber)
         {
             try
             {
-                return _busBL.EmptySeatsOnTheBus(busNumber);
+                return Ok(_busBL.EmptySeatsOnTheBus(busNumber));
             }
             catch (Exception ex)
             {
-                throw ex;
+                return StatusCode(500, ex.Message);
             }
         }
 
         [HttpPost]
         [Route("AddBus")]
-        public bool AddBus(Bus newBus)
+        public bool AddBus(BusDTO newBus)
         {
             try
             {
@@ -91,7 +93,7 @@ namespace SaveTheDate.API.Controllers
 
         [HttpPut]
         [Route("UpdateRoute/{busId},{RouteToUpdate}")]
-        public bool UpdateRoute(int busId, string RouteToUpdate) 
+        public bool UpdateRoute(int busId, string RouteToUpdate)
         {
             try
             {
@@ -105,7 +107,7 @@ namespace SaveTheDate.API.Controllers
 
         [HttpPut]
         [Route("UpdateGuestToBus/{guestId},{busId}")]
-        public bool UpdateRoute(int guestId, int busId)
+        public bool UpdateGuestToBus(int guestId, int busId)
         {
             try
             {

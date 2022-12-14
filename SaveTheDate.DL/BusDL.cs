@@ -43,7 +43,7 @@ namespace SaveTheDate.DL
         {
             try
             {
-                int reservedSeats = SaveTheDateContext.Guests.Where(x => x.Id.Equals(busNumber)).Count();
+                int reservedSeats = SaveTheDateContext.Guests.Where(x => x.BusId.Equals(busNumber)).Count();
                 Bus SeatsNumber = SaveTheDateContext.buses.SingleOrDefault(x => x.Id.Equals(busNumber));
                 return SeatsNumber.SeatsNum - reservedSeats;
             }

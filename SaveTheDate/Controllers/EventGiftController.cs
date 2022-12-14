@@ -20,15 +20,15 @@ namespace SaveTheDate.API.Controllers
 
 
         [HttpGet]
-        [Route("GetAllGivenGifts/{id}")]
-        public IActionResult GetAllGivenGifts(int id)
+        [Route("GetAllGivenGifts/{eventId}")]
+        public IActionResult GetAllGivenGifts(int eventId)
         {
 
             try
             {
 
                 return 
-                    Ok(_eventGiftBL.GetAllGivenGifts(id));
+                    Ok(_eventGiftBL.GetAllGivenGifts(eventId));
             }
 
 

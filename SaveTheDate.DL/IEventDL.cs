@@ -6,7 +6,6 @@ namespace SaveTheDate.DL
     {
         bool AddEvent(Event newEvent);
         bool UpdateEvent(int eventID, Event myEvent);
-
-        public Event GetEventById(int eventID);
+        Event GetEventById(int eventID);
     }
 }
