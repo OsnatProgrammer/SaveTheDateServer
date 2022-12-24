@@ -19,20 +19,20 @@ namespace SaveTheDate.API.Controllers
             }
 
 
-            [HttpGet]
-            [Route("GetAllCash/{id}")]
-            public IActionResult GetAllCash(int id)
-            {
-                try
-                {
-                    return
-                    Ok(_guestBL.GetAllCash(id));
-                }
-                catch (Exception ex)
-                {
-                    return StatusCode(500, ex.Message);
-                }
-            }
+            //[HttpGet]
+            //[Route("GetAllCash/{id}")]
+            //public IActionResult GetAllCash(int id)
+            //{
+            //    try
+            //    {
+            //        return
+            //        Ok(_guestBL.GetAllCash(id));
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        return StatusCode(500, ex.Message);
+            //    }
+            //}
 
             [HttpGet]
             [Route("GetAllConfirmGuests/{id}")]

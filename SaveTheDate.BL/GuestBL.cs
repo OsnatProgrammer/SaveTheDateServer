@@ -38,12 +38,12 @@ namespace SaveTheDate.BL
         }
 
         //GET
-        public List<EventGiftDTO> GetAllCash(int id)
-        {
-            List<EventGift> EventGift = _guestDL.GetAllCash(id);
-            return mapper.Map<List<EventGift>, List<EventGiftDTO>>(EventGift);
-
-        }
+      //  public List<EventGiftDTO> GetAllCash(int id)
+      //  {
+      //      List<EventGift> EventGift = _guestDL.GetAllCash(id);
+      //      return mapper.Map<List<EventGift>, List<EventGiftDTO>>(EventGift);
+      //
+      //  }
         public List<Guest> GetAllConfirmGuests(int id)
         {
             return _guestDL.GetAllConfirmGuests(id);

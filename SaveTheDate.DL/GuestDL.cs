@@ -57,19 +57,19 @@ namespace SaveTheDate.DL
         //שליפת כל המזומנים שהתקבלו עד כה מהאורחים
         //לא קשור לכאן!!!
         //זה אמור להיות באוונט גיפט ואמור לעשות קישור לגיפט ובדוק את כל המתנות שהקטגוריה שלהן היא כסף
-        public int GetAllCash(int eventId)
-        {
-            try
-            {
-                EventGift cash= SaveTheDateContext.EventGifts.SingleOrDefault(x => x.Id == eventId);
-                Gift gift= cash.Gift;
-       
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
+       // public int GetAllCash(int eventId)
+       // {
+       //     try
+       //     {
+       //         EventGift cash= SaveTheDateContext.EventGifts.SingleOrDefault(x => x.Id == eventId);
+       //         Gift gift= cash.Gift;
+       //
+       //     }
+       //     catch (Exception ex)
+       //     {
+       //         throw ex;
+       //     }
+       // }
 
         // שליפת אורח לפי מספר טלפון -- יש אפשרות לשלוף פרטים על האורח כגון שולחן ישיבה ואוטובוס 
         public Guest GetGuestByPhone(string phone, int eventId)

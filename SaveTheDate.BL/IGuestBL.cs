@@ -8,7 +8,7 @@ namespace SaveTheDate.BL
     {
         bool AddGuest(GuestDTO newGuestDTO);
         bool DeleteGuest(int GuestID);
-        List<EventGiftDTO> GetAllCash(int id);
+    //    List<EventGiftDTO> GetAllCash(int id);
         List<Guest> GetAllConfirmGuests(int id);
         List<Guest> GetAllInvitedGuests(int id);
         List<Guest> GetAllUnConfirmGuests(int id);
