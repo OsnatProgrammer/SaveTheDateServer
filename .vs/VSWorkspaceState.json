@@ -1,4 +1,9 @@
 {
-  "ExpandedNodes": [],
+  "ExpandedNodes": [
+    "",
+    "\\SaveTheDate",
+    "\\SaveTheDate\\Properties"
+  ],
+  "SelectedNode": "\\SaveTheDate\\Startup.cs",
   "PreviewInSolutionExplorer": false
 }
