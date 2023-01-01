@@ -64,27 +64,46 @@ namespace SaveTheDate
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "SaveTheDate", Version = "v1" });
             });
 
+            //    options.AddDefaultPolicy(
+            //    builder =>
+            //    {
+            //        builder.WithOrigins("https://localhost:44331")
+            //        .AllowAnyHeader()
+            //        .AllowAnyMethod()
+            //        .AllowCredentials();
+            //    });
+            //});
+
+
             services.AddCors(options =>
             {
-                options.AddPolicy("MyAllowSpecificOrigins", builder =>
+                options.AddPolicy("AllowSpecificOrigins", builder =>
                 {
-                    builder.WithOrigins("http://localhost:4200")
-                    .AllowAnyHeader()
-                    .AllowAnyMethod();
+                    builder.WithOrigins("http://localhost:55748")
+                       .AllowAnyHeader().WithMethods("PUT", "DELETE", "GET", "POST")
+
+            .AllowAnyMethod()
+            .AllowCredentials();
+
                 });
             });
+
+           // services.AddCors(options =>
+           // {
+           //     options.AddPolicy("MyAllowSpecificOrigins", builder =>
+           //     {
+           //         builder.WithOrigins("http://localhost:4200")
+           //         .AllowAnyHeader()
+           //         .AllowAnyMethod();
+           //     });
+           //});
 
             //JSON
             services.AddControllersWithViews().AddNewtonsoftJson(options =>
 
             options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore).
                 AddNewtonsoftJson(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
-
-
         }
-
-
-
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -96,9 +115,11 @@ namespace SaveTheDate
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "CoronaManagementSystemHMO.API v1"));
             }
 
-            app.UseHttpsRedirection();
+            
 
-            app.UseCors("MyAllowSpecificOrigins");
+            app.UseCors("AllowSpecificOrigins");
+
+            app.UseHttpsRedirection();
 
             app.UseRouting();
 

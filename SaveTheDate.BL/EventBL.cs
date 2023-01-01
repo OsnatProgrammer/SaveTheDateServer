@@ -34,6 +34,12 @@ namespace SaveTheDate.BL
         public bool AddEvent(EventDTO newEventDTO)
         {
             Event myEvent = mapper.Map<EventDTO, Event>(newEventDTO);
+            myEvent.Id =0;
+            myEvent.EventType = 1;
+            myEvent.Date = DateTime.Now;
+            //myEvent.Link = "hhh";
+            //myEvent.Text = "hhh";
+            //myEvent.Picture = "hhh";
             return _eventDL.AddEvent(myEvent);
         }
 

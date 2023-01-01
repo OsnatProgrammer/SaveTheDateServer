@@ -121,8 +121,8 @@ namespace SaveTheDate.API.Controllers
 
 
         [HttpDelete]
-        [Route("deleteBus")]
-        public bool deleteBus(int id)
+        [Route("DeleteBus")]
+        public bool DeleteBus(int id)
         {
             try
             {
