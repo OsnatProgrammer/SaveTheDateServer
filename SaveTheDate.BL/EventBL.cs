@@ -43,6 +43,11 @@ namespace SaveTheDate.BL
             return _eventDL.AddEvent(myEvent);
         }
 
+        public bool Login(string phone, string password) 
+        {
+            return _eventDL.Login(phone, password);
+        }
+
         public bool UpdateEvent(int eventID, EventDTO updateDetailsDTO)
         {
             Event Event = mapper.Map<EventDTO, Event>(updateDetailsDTO);

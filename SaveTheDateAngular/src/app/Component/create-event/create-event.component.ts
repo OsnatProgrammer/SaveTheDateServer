@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { EventService } from 'src/app/Service/event.service';
 import { Event } from 'src/app/Classes/Event';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { DialogBoxComponent } from '../dialog-box/dialog-box.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-create-event',
@@ -22,12 +24,12 @@ export class CreateEventComponent implements OnInit {
   eventForm!: FormGroup;
   showAllEvent: Event[] = []
 
-  constructor(private EventSer: EventService, private myRoute: Router) { }
+  constructor(private EventSer: EventService, private myRoute: Router,public dialog: MatDialog) { }
 //בדיקות תקינות
   ngOnInit(): void {
     this.eventForm = new FormGroup({
-      userId: new FormControl(0,[Validators.required,Validators.min(1),Validators.max(3)]),
-      eventType:new FormControl(0,[Validators.required]),
+      userId: new FormControl(0,[Validators.required]),
+      eventType:new FormControl(1,[Validators.required,Validators.min(1),Validators.max(3)]),
       dateEvent:new FormControl(new Date(),[Validators.required]),
       password:new FormControl("",[Validators.required]),
       name:new FormControl("",[Validators.required]),
@@ -46,11 +48,14 @@ export class CreateEventComponent implements OnInit {
         Location:this.eventForm.controls.location.value, Link: this.eventForm.controls.link.value,
         Text:this.eventForm.controls.text.value,Picture: this.eventForm.controls.picture.value}
       this.EventSer.AddEvent(this.newEvent).subscribe((data)=>{alert(data);console.log("data",data)})
-
+      this.EventSer.IdentifiedEvent=this.newEvent
+      this.myRoute.navigate(["/My Gifts"]);
     }
     else
     alert("לא תקין");
   }
+
+
 }
 
 

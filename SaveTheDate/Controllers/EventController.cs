@@ -49,6 +49,20 @@ namespace SaveTheDate.API.Controllers
             }
         }
 
+        [HttpPost]
+        [Route("Login")]
+        public bool Login(string phone, string password)
+        {
+            try
+            {
+                return _eventBL.Login(phone,password);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
 
         [HttpPut]
         [Route("UpdateEvent/{eventID}")]

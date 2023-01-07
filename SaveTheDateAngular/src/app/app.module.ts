@@ -50,7 +50,6 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatSortModule} from '@angular/material/sort';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatTooltipModule} from '@angular/material/tooltip';
-
 import {MatTreeModule} from '@angular/material/tree';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatDatepickerInput } from '@angular/material/datepicker';
@@ -72,6 +71,11 @@ import { MatRadioModule} from '@angular/material/radio';
 import { MatIconModule} from '@angular/material/icon';
 import { MatGridListModule} from '@angular/material/grid-list';
 import { MatCheckboxModule} from '@angular/material/checkbox';
+import { DialogBoxComponent } from './Component/dialog-box/dialog-box.component';
+import { PageNotFoundComponent } from './Component/page-not-found/page-not-found.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -97,6 +101,8 @@ import { MatCheckboxModule} from '@angular/material/checkbox';
     RegisterToShuttleComponent,
     AddBlessingComponent,
     AddCashGiftComponent,
+    DialogBoxComponent,
+    PageNotFoundComponent,
 
     //,
     //MatInputModule,

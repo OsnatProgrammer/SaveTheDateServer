@@ -43,6 +43,25 @@ namespace SaveTheDate.DL
             }
         }
 
+        public bool Login(string phone,string password)
+        {
+            try
+            {
+                User myUser = new User();
+                Event myEvent =new Event();
+
+                myUser = SaveTheDateContext.Users.SingleOrDefault(x => x.Phone == phone);
+                myEvent = SaveTheDateContext.Events.SingleOrDefault(x => x.Password == password);
+                if(myUser.Id.Equals(myEvent.UserId))
+                    return true;
+                return false;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
 
         //PUT
         //עדכון פרטי אירוע

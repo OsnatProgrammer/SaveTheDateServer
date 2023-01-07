@@ -79,7 +79,7 @@ namespace SaveTheDate
             {
                 options.AddPolicy("AllowSpecificOrigins", builder =>
                 {
-                    builder.WithOrigins("http://localhost:55748")
+                    builder.WithOrigins("http://localhost:4200")
                        .AllowAnyHeader().WithMethods("PUT", "DELETE", "GET", "POST")
 
             .AllowAnyMethod()

@@ -13,8 +13,8 @@ import { MatDialog } from '@angular/material/dialog';
 export class UpdateEventDetailsComponent implements OnInit {
 
 
-  eventForm!: FormGroup;
-  myEvent: Event=new Event();
+  // eventForm!: FormGroup;
+  // myEvent: Event=new Event();
 
   constructor(private EventSer: EventService, private myRoute: Router) { }
 //private fb: FormBuilder,public dialog: MatDialog,
@@ -22,25 +22,25 @@ export class UpdateEventDetailsComponent implements OnInit {
 
 //בדיקות תקינות
   ngOnInit(): void {
-    this.eventForm = new FormGroup({
-      hhhh
-      userId: new FormControl(0,[Validators.required,Validators.min(1),Validators.max(3)]),
-      eventType:new FormControl(0,[Validators.required]),
-      dateEvent:new FormControl(new Date(),[Validators.required]),
-      password:new FormControl("",[Validators.required]),
-      name:new FormControl("",[Validators.required]),
-      location:new FormControl("",[Validators.required]),
-      link:new FormControl("",[Validators.required]),
-      text:new FormControl("",[Validators.required]),
-      picture:new FormControl("",[Validators.required]),
- }); 
-  }
-  MyIdentifiedEvent:Event =this.EventSer.IdentifiedEvent
-  edit(eventToEdit:Event) {
+//     this.eventForm = new FormGroup({
+      
+//       userId: new FormControl(0,[Validators.required,Validators.min(1),Validators.max(3)]),
+//       eventType:new FormControl(0,[Validators.required]),
+//       dateEvent:new FormControl(new Date(),[Validators.required]),
+//       password:new FormControl("",[Validators.required]),
+//       name:new FormControl("",[Validators.required]),
+//       location:new FormControl("",[Validators.required]),
+//       link:new FormControl("",[Validators.required]),
+//       text:new FormControl("",[Validators.required]),
+//       picture:new FormControl("",[Validators.required]),
+//  }); 
+  //}
+  // MyIdentifiedEvent:Event =this.EventSer.IdentifiedEvent
+  // edit(eventToEdit:Event) {
   
-    console.log('eventToEdit', eventToEdit);
-    this.myEvent = {...eventToEdit};
-    this.EventSer.UpdateEvent(eventToEdit);
+  //   console.log('eventToEdit', eventToEdit);
+  //   this.myEvent = {...eventToEdit};
+  //   this.EventSer.UpdateEvent(eventToEdit);
      
   }
 

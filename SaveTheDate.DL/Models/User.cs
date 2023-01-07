@@ -7,6 +7,7 @@ namespace SaveTheDate.DL.Models
 {
     public partial class User
     {
+
         public User()
         {
             EventGifts = new HashSet<EventGift>();

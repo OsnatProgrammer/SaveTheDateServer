@@ -63,7 +63,7 @@ export class EventPageComponent implements OnInit {
   MyIdentifiedEvent:Event =this.EventSer.IdentifiedEvent
   edit() {
   
-    console.log('eventToEdit', eventToEdit);
+    // console.log('eventToEdit', eventToEdit);
     this.myRoute.navigate(["/UpdateEventDetails"])
 
      

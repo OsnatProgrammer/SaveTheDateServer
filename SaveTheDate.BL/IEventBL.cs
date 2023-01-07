@@ -9,5 +9,6 @@ namespace SaveTheDate.BL
         bool AddEvent(EventDTO newEventDTO);
         bool UpdateEvent(int EventID, EventDTO updaeteDetailsDTO);
         Event GetEventById(int eventID);
+        bool Login(string phone, string password);
     }
 }

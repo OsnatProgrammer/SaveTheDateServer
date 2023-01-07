@@ -7,5 +7,6 @@ namespace SaveTheDate.DL
         bool AddEvent(Event newEvent);
         bool UpdateEvent(int eventID, Event myEvent);
         Event GetEventById(int eventID);
+        bool Login(string phone, string password);
     }
 }

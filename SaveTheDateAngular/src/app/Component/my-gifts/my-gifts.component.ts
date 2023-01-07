@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { EventService } from 'src/app/Service/event.service';
 
 @Component({
   selector: 'app-my-gifts',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyGiftsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private EventSer: EventService, private myRoute: Router) { }
 
   ngOnInit(): void {
   }
+  chooseGifts(){
+    this.myRoute.navigate(["/Gifts List"]);
+  }
 
+      // //להעביר לאחרי המתנות ולהזריק את הדיולוג בקונסטרקטור 
+      // this.dialog.open(DialogBoxComponent)
+      // this.myRoute.navigate(["/"]);
 }
+
+

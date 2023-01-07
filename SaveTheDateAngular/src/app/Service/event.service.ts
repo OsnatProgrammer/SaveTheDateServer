@@ -4,6 +4,7 @@ import { Observable, observable } from 'rxjs'
 import { Route } from '@angular/router';
 import { Event } from '../Classes/Event';
 import { Gift } from '../Classes/Gift';
+import { MatDialog } from '@angular/material/dialog';
 
 
 @Injectable({
@@ -22,7 +23,7 @@ export class EventService {
 
   IdentifiedEvent:Event=new Event()
   
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,public dialog: MatDialog) { }
 
   //Event
 
@@ -30,9 +31,12 @@ export class EventService {
     return this.http.get(`${this.APIUrlEvent}/GetEventById/${val}`);
   }
 
-  AddEvent(val: Event) {
-    
+  AddEvent(val: Event) {    
     return this.http.post(this.APIUrlEvent + '/AddEvent', val);
+  }
+
+  Login(phone:any,password:any): Observable<any> {
+    return this.http.post(this.APIUrlEvent + '/Login',phone, password );
   }
 
   UpdateEvent(val: any) {
@@ -54,8 +58,8 @@ export class EventService {
 
   //Gift
 
-  GetGiftsByEventType(val: any): Observable<any> {
-    return this.http.get(`${this.APIUrlGift}/GetGiftsByEventType/${val}`);
+  GetGiftsByEventType(val: any): Observable<Gift[]> {
+    return this.http.get<Gift[]>(`${this.APIUrlGift}/GetGiftsByEventType/${val}`);
   }
 
   GetAllGift(): Observable<any> {
