@@ -1,0 +1,104 @@
+<p>nav works!</p>
+
+<div class="myNav" >
+    <mat-sidenav-container>
+        
+        <mat-sidenav-content >
+          <mat-toolbar color=primary style="background-color:rgb(3, 70, 90)">
+           <div fxHide.gt-xs>
+             <button mat-icon-button>
+              <mat-icon>menu</mat-icon>
+            </button>
+          </div>
+             <img src="../../assets/images/Logo.png"  width="150px">
+    
+           
+           <div fxFlex fxLayout fxLayoutAlign="flex-end"  fxHide.xs >
+              <ul fxLayout fxLayoutGap="20px" class="navigation-items">
+    
+                 <li *ngIf="this.EventSer.isIdentified">
+                  <mat-icon matSuffix>person</mat-icon> 
+                  <span style="font-family: Candara;"> Hello {{EventSer.IdentifiedEvent.Name}}  {{EventSer.IdentifiedEvent.DateEvent}}</span>
+                </li>
+                  
+                  <!-- <li *ngIf="!this.EventSer.isIdentified">
+                      <a routerLink="/Login">                        
+                        <mat-icon class="icon">input</mat-icon>
+
+                        <span  class="label" style="font-family: Candara;" >Login</span>
+                       </a>
+                  </li> -->
+
+                   <li><!--(click)="showHome()" -->
+                    <a routerLink="/Home" >
+                        <mat-icon class="icon">home</mat-icon>
+                        <span class="label" style="font-family: Candara;">Home</span>
+                    </a>
+                  </li>
+                    <li>
+                      <a routerLink="/Table Placement">
+                        <mat-icon> restaurant_menu </mat-icon>
+                        <mat-icon> group_add </mat-icon>                     
+                          <span class="label" style="font-family: Candara;">סידור שולחנות</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a routerLink="/Show Arrival">
+                        <mat-icon>event_available</mat-icon>
+                          <span class="label" style="font-family: Candara;">אישורי הגעה</span>
+                      </a>
+                    </li>
+                    <li>
+                        <a routerLink="/Event Shuttle">
+                            <mat-icon> directions_bus </mat-icon>                           
+                            <span class="label" style="font-family: Candara;">עדכון הסעות לאירוע</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a routerLink="/Add Guest">
+                            <mat-icon>person_add</mat-icon>
+                            <span class="label" style="font-family: Candara;">הוספת מוזמנים לאירועs</span>
+                        </a>
+                      </li>
+                  <li (click)="logOut()">
+                      <a>
+                        <mat-icon class="icon">input</mat-icon>
+                        <span class="label" style="font-family: Candara;">LogOut</span>
+                       </a>
+                  </li>
+              </ul>
+           </div>
+          </mat-toolbar>
+          <main>
+          </main>
+        </mat-sidenav-content>
+     </mat-sidenav-container>
+    
+    <!-- <a [routerLink]="['/']" mat-button></a>חזרה באותה קומפוננטה -->
+    </div>
+                          <!-- <mat-icon>people</mat-icon> 
+                      
+                    <mat-icon> local_airport</mat-icon>
+                    <mat-icon> textsms</mat-icon>
+                    <mat-icon>how_to_reg</mat-icon>
+                    <mat-icon>send</mat-icon>
+                    <mat-icon> attach_file</mat-icon>
+                    <mat-icon> add_comment</mat-icon>
+                    <mat-icon> local_airport</mat-icon>
+    <mat-icon>perm_identity</mat-icon>
+    <mat-icon>help_outline</mat-icon>
+    <mat-icon>flight_takeoff</mat-icon>
+    <mat-icon>flight_land</mat-icon>
+    <mat-icon>feedback</mat-icon>
+    <mat-icon>contact_support</mat-icon>
+    -->
+<!-- 
+    <mat-icon>person_add</mat-icon>
+    <mat-icon>group_add</mat-icon>
+    <mat-icon>clear</mat-icon>
+    <mat-icon>create</mat-icon>
+    <mat-icon>add</mat-icon>
+    <mat-icon>event_seat</mat-icon>
+    <mat-icon>event</mat-icon>
+    <mat-icon>delete</mat-icon>
+    <mat-icon>calendar_today</mat-icon>  -->

@@ -25,12 +25,14 @@ import { AddBlessingComponent } from './Component/add-blessing/add-blessing.comp
 import { AddCashGiftComponent } from './Component/add-cash-gift/add-cash-gift.component';
 import { AddGiftComponent } from './Component/add-gift/add-gift.component';
 import { AppComponent } from './app.component';
+import { NavComponent } from './Component/nav/nav.component';
 
 const routes: Routes = [
 
 
   { path: "", component: HomePageComponent },
   {path: "App", component: AppComponent},
+  {path: "Nav", component: NavComponent},
 
   {path: "Home", component: HomePageComponent},
   {path: "Login", component: LoginComponent},

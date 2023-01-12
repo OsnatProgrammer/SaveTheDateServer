@@ -73,6 +73,8 @@ import { MatGridListModule} from '@angular/material/grid-list';
 import { MatCheckboxModule} from '@angular/material/checkbox';
 import { DialogBoxComponent } from './Component/dialog-box/dialog-box.component';
 import { PageNotFoundComponent } from './Component/page-not-found/page-not-found.component';
+import { NavComponent } from './Component/nav/nav.component';
+import { NavGuestComponent } from './Component/nav-guest/nav-guest.component';
 
 
 
@@ -103,6 +105,8 @@ import { PageNotFoundComponent } from './Component/page-not-found/page-not-found
     AddCashGiftComponent,
     DialogBoxComponent,
     PageNotFoundComponent,
+    NavComponent,
+    NavGuestComponent,
 
     //,
     //MatInputModule,

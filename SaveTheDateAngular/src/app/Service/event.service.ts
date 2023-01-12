@@ -21,7 +21,8 @@ export class EventService {
   readonly APIUrlTable = "https://localhost:44304/api/Table"
   readonly APIUrlBus = "https://localhost:44304/api/Bus"
 
-  IdentifiedEvent:Event=new Event()
+  IdentifiedEvent:Event=new Event();
+  isIdentified:boolean=false;
   
   constructor(private http: HttpClient,public dialog: MatDialog) { }
 
@@ -36,7 +37,7 @@ export class EventService {
   }
 
   Login(phone:any,password:any): Observable<any> {
-    return this.http.post(this.APIUrlEvent + '/Login',phone, password );
+    return this.http.post(this.APIUrlEvent + '/Login',{phone:"phone", password:"password"});
   }
 
   UpdateEvent(val: any) {
