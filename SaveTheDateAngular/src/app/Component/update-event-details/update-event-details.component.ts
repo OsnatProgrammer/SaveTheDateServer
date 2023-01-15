@@ -13,8 +13,9 @@ import { MatDialog } from '@angular/material/dialog';
 export class UpdateEventDetailsComponent implements OnInit {
 
 
-  // eventForm!: FormGroup;
-  // myEvent: Event=new Event();
+
+  eventForm!: FormGroup;
+  myEvent: Event=new Event();
 
   constructor(private EventSer: EventService, private myRoute: Router) { }
 //private fb: FormBuilder,public dialog: MatDialog,
@@ -22,29 +23,43 @@ export class UpdateEventDetailsComponent implements OnInit {
 
 //בדיקות תקינות
   ngOnInit(): void {
-//     this.eventForm = new FormGroup({
+
+
+    this.eventForm = new FormGroup({
       
-//       userId: new FormControl(0,[Validators.required,Validators.min(1),Validators.max(3)]),
-//       eventType:new FormControl(0,[Validators.required]),
-//       dateEvent:new FormControl(new Date(),[Validators.required]),
-//       password:new FormControl("",[Validators.required]),
-//       name:new FormControl("",[Validators.required]),
-//       location:new FormControl("",[Validators.required]),
-//       link:new FormControl("",[Validators.required]),
-//       text:new FormControl("",[Validators.required]),
-//       picture:new FormControl("",[Validators.required]),
-//  }); 
-  //}
-  // MyIdentifiedEvent:Event =this.EventSer.IdentifiedEvent
-  // edit(eventToEdit:Event) {
-  
-  //   console.log('eventToEdit', eventToEdit);
-  //   this.myEvent = {...eventToEdit};
-  //   this.EventSer.UpdateEvent(eventToEdit);
-     
+      userId: new FormControl(0,[Validators.required]),
+      eventType:new FormControl(0,[Validators.required,Validators.min(1),Validators.max(3)]),
+      dateEvent:new FormControl(new Date(),[Validators.required]),
+      password:new FormControl("",[Validators.required]),
+      name:new FormControl("",[Validators.required]),
+      location:new FormControl("",[Validators.required]),
+      link:new FormControl("",[Validators.required]),
+      text:new FormControl("",[Validators.required]),
+      picture:new FormControl("",[Validators.required]),
+ }); 
+    this.eventForm.controls['userId'].setValue(this.EventSer.IdentifiedEvent.UserId);
+    this.eventForm.controls['eventType'].setValue(this.EventSer.IdentifiedEvent.EventType);
+    this.eventForm.controls['dateEvent'].setValue(this.EventSer.IdentifiedEvent.DateEvent);
+    this.eventForm.controls['name'].setValue(this.EventSer.IdentifiedEvent.Name);
+    this.eventForm.controls['location'].setValue(this.EventSer.IdentifiedEvent.Location);
+    this.eventForm.controls['link'].setValue(this.EventSer.IdentifiedEvent.Link);
+    this.eventForm.controls['text'].setValue(this.EventSer.IdentifiedEvent.Text);
+    this.eventForm.controls['picture'].setValue(this.EventSer.IdentifiedEvent.Picture);
+    
   }
-
-
-
-
+  MyIdentifiedEvent:Event =this.EventSer.IdentifiedEvent
+  
+  edit(eventToEdit:Event) {
+  
+    console.log('eventToEdit', eventToEdit);
+    // this.myEvent = {...eventToEdit};
+    this.EventSer.UpdateEvent(eventToEdit).subscribe(data => {
+      if (data) {
+        console.log("data",data)
+      }
+      else { alert("הנתונים אינם תואמים, נסה שוב") }
+  
+}
+);
+  }
 }

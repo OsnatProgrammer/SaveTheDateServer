@@ -34,6 +34,19 @@ namespace SaveTheDate.API.Controllers
             }
         }
 
+        [HttpGet]
+        [Route("GetAllEvents")]
+        public IActionResult GetAllEvents()
+        {
+            try
+            {
+                return Ok(_eventBL.GetAllEvents());
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
 
         [HttpPost]
         [Route("AddEvent")]
@@ -49,13 +62,30 @@ namespace SaveTheDate.API.Controllers
             }
         }
 
+        //[HttpPost]
+        //[Route("Login")]
+        //public bool Login(string phone, string password)
+        //{
+        //    try
+        //    {
+        //        return _eventBL.Login(phone,password);
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //}
+
+
         [HttpPost]
         [Route("Login")]
-        public bool Login(string phone, string password)
+        public Event Login(string phone, string password)
         {
             try
             {
-                return _eventBL.Login(phone,password);
+                return _eventBL.Login(phone, password);
+
             }
             catch (Exception ex)
             {

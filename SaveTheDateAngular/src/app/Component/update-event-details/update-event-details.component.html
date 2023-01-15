@@ -1,18 +1,20 @@
-<!-- <p>update-event-details works!</p>
+<p>update-event-details works!</p>
 <form [formGroup]="eventForm">
+  
     <mat-form-field appearance="fill" class="width-50">
       <mat-label>User Id</mat-label>
-      <input matInput placeholder="Enter User Id"  formControlName="userId" >      
+      <input matInput placeholder="Enter User Id"  formControlName="userId" >   
+   
     </mat-form-field> 
 
-     <mat-form-field appearance="fill" formControlName="eventType">
+     <!-- <mat-form-field appearance="fill" formControlName="eventType">
       <mat-label>Event Type</mat-label>
       <mat-select>
         <mat-option value="חתונה">חתונה</mat-option>
         <mat-option value="בר מצווה">בר מצווה</mat-option>
         <mat-option value="ברית">ברית</mat-option>
       </mat-select>
-    </mat-form-field>
+    </mat-form-field> -->
 
     <mat-form-field appearance="fill" >
       <mat-label >Enter Event Date</mat-label>
@@ -21,13 +23,13 @@
     <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
 
-    <mat-form-field appearance="fill" >
+    <!-- <mat-form-field appearance="fill" >
       <mat-label> Password</mat-label>
           <input matInput [type]="hide ? 'password' : 'text'"  placeholder="Password"  formControlName="password" >
           <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
           <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
           </button>
-    </mat-form-field>
+    </mat-form-field> -->
 
     <mat-form-field appearance="fill" >
       <mat-label>Event Name</mat-label>
@@ -55,6 +57,6 @@
       <input matInput placeholder="Enter Event picture"  formControlName="picture" >
     </mat-form-field>  
 
-    <br/> <br/> <button mat-raised-button  (click)="UpdateEvent()" class="button" >Add Event</button>
-
-  </form> -->
+     <br/> <br/> <button mat-raised-button  (click)="edit(this.eventForm.value)"  class="button" >Edit Event</button> 
+<!-- [disabled]="eventForm.invalid" -->
+  </form>

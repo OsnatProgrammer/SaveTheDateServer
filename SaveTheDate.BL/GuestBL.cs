@@ -56,6 +56,11 @@ namespace SaveTheDate.BL
         {
             return _guestDL.GetAllUnConfirmGuests(id);
         }
+
+        public int GetAllConfirmGuestsCount(int id)
+        {
+            return _guestDL.GetAllConfirmGuestsCount(id);
+        }
         public Guest GetGuestByPhone(string phone, int eventId)
         {
             return _guestDL.GetGuestByPhone(phone, eventId);

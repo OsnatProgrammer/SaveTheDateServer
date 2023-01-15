@@ -39,11 +39,9 @@ export class EventPageComponent implements OnInit {
   }
 
   GetEventById(eventId: string) {
-    console.log("hi")
     this.EventSer.GetEventById(eventId).subscribe((data: Event) => { this.myEvent = data; console.log(data) },
       error => { throw error },
       () => console.log("finished"));
-    console.log("by")
   }
 
   // AddEvent(){
@@ -61,10 +59,9 @@ export class EventPageComponent implements OnInit {
   // }
   
   MyIdentifiedEvent:Event =this.EventSer.IdentifiedEvent
-  edit() {
-  
+  updateEvent() {
     // console.log('eventToEdit', eventToEdit);
-    this.myRoute.navigate(["/UpdateEventDetails"])
+    this.myRoute.navigate(["/Update EventDetails"])
 
      
   }

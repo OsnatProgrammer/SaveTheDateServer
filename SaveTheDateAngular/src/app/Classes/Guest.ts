@@ -1,15 +1,31 @@
 export class Guest{
-    constructor(
-        public Id: number,
-        public UserId: number,
-        public EventId:number,
-        public ArrivalConf:boolean,
+ 
+         Id?: number;
+         UserId!: number|undefined;
+         EventId!:number|undefined;
+         ArrivalConf!:boolean;
 
-        public TableNum?: number,
-        public  BusId?: number,
-        public  GiftId?: number
-    ){}
+         TableNum?: number;
+         BusId?: number;
+         GiftId?: number
+       constructor(){}
     };
+
+
+// export class Guest{
+//     constructor(
+//         public Id: number,
+//         public UserId: number,
+//         public EventId:number,
+//         public ArrivalConf:boolean,
+
+//         public TableNum?: number,
+//         public  BusId?: number,
+//         public  GiftId?: number
+//     ){}
+//     };
+
+
 
 
     

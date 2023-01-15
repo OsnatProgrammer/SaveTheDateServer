@@ -1,5 +1,5 @@
 export class Event {
-    Id?: string;
+    Id?: number;
     UserId!: number;
     EventType!: number;
     DateEvent!: Date;

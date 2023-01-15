@@ -1,4 +1,5 @@
 ﻿using SaveTheDate.DL.Models;
+using System.Collections.Generic;
 
 namespace SaveTheDate.DL
 {
@@ -7,6 +8,9 @@ namespace SaveTheDate.DL
         bool AddEvent(Event newEvent);
         bool UpdateEvent(int eventID, Event myEvent);
         Event GetEventById(int eventID);
-        bool Login(string phone, string password);
+        List<Event> GetAllEvents();
+        //bool Login(string phone, string password);
+        Event Login(string phone, string password);
+
     }
 }

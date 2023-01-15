@@ -25,7 +25,18 @@ namespace SaveTheDate.DL
             }
         }
 
-
+        //שליפת כל האירועים
+        public List<Event> GetAllEvents()
+        {
+            try
+            {
+                return SaveTheDateContext.Events.ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
         //POST
         // הוספת אירוע.
@@ -42,26 +53,48 @@ namespace SaveTheDate.DL
                 throw ex;
             }
         }
+        //עובד בוליאני
+        //public bool Login(string phone,string password)
+        //{
+        //    try
+        //    {
+        //        User myUser = new User();
+        //        Event myEvent =new Event();
 
-        public bool Login(string phone,string password)
+        //        myUser = SaveTheDateContext.Users.SingleOrDefault(x => x.Phone == phone);
+        //        if(myUser != null)  
+        //        myEvent = SaveTheDateContext.Events.SingleOrDefault(x => x.Password == password);
+        //        if (myEvent != null)
+        //            if (myUser.Id.Equals(myEvent.UserId))
+        //            return true;
+        //        return false;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //}
+
+        public Event Login(string phone, string password)
         {
             try
             {
                 User myUser = new User();
-                Event myEvent =new Event();
+                Event myEvent = new Event();
 
                 myUser = SaveTheDateContext.Users.SingleOrDefault(x => x.Phone == phone);
-                myEvent = SaveTheDateContext.Events.SingleOrDefault(x => x.Password == password);
-                if(myUser.Id.Equals(myEvent.UserId))
-                    return true;
-                return false;
+                if (myUser != null)
+                    myEvent = SaveTheDateContext.Events.SingleOrDefault(x => x.Password == password);
+                if (myEvent != null)
+                    if (myUser.Id.Equals(myEvent.UserId))
+                        return myEvent;
+                return null;
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
-
 
         //PUT
         //עדכון פרטי אירוע

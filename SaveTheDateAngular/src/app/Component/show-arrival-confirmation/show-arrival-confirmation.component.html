@@ -1,1 +1,13 @@
+<app-nav></app-nav>
 <p>show-arrival-confirmation works!</p>
+<div *ngFor="let i of showAllInvitedGuests">
+    {{i.UserId}}
+    {{i.ArrivalConf}}
+</div>
+
+<div>
+    כמות המוזמנים שאישרו הגעה:
+  {{ConfirmGuestsCount}}
+
+</div>
+

@@ -79,8 +79,23 @@ namespace SaveTheDate.API.Controllers
                 }
             }
 
+        [HttpGet]
+        [Route("GetAllConfirmGuestsCount/{id}")]
+        public IActionResult GetAllConfirmGuestsCount(int id)
+        {
+            try
+            {
+                return
+                Ok(_guestBL.GetAllConfirmGuestsCount(id));
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
 
-            [HttpPost]
+
+        [HttpPost]
             [Route("AddGuest")]
             public bool AddGuest(GuestDTO newGuestDTO)
             {

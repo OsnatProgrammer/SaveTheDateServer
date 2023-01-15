@@ -1,12 +1,12 @@
 
 export class User{
-    constructor(
-        public Id: number,
-        public Name:string,
-        public Phone: string,
-        public Email: string,
+
+     Id?: number;
+     Name!:string;
+     Phone!: string;
+     Email!: string;
         
-    ){}
+        constructor(){}
     };
 
 

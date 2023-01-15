@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { EventService } from 'src/app/Service/event.service';
+import { Pipe,PipeTransform } from '@angular/core';
 
 @Component({
   selector: 'app-nav',

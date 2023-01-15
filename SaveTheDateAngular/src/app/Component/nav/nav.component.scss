@@ -1,4 +1,6 @@
 
+
+
 mat-sidenav-container, mat-sidenav-content, mat-sidenav {
     height: 100%;
   }
@@ -17,6 +19,11 @@ mat-sidenav-container, mat-sidenav-content, mat-sidenav {
     color: lightgray;
   }
   
+  ul li{
+    display: inline;
+
+  }
+  
   .navigation-items {
     list-style: none;
     padding: 0;
@@ -28,19 +35,25 @@ mat-sidenav-container, mat-sidenav-content, mat-sidenav {
     display: inline-block;
     height: 30px;
     margin: 1 auto;
-    padding-right: 12px;
+    padding-right: 15px;
     text-align: center;
     vertical-align: middle;
-    width: 15%;
+    width: 5%;
   }
   
   .label {
-    display: inline-block;
+    display: inline;
     line-height: 30px;
     margin: 0;
     width: 85%;
-
   }
+
   .myNav{
     z-index:  9;
+    direction: rtl;
   }
+
+ body{
+    font-family: 'Varela-Round';
+
+ }

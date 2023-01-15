@@ -1,10 +1,13 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable, observable } from 'rxjs'
 import { Route } from '@angular/router';
 import { Event } from '../Classes/Event';
 import { Gift } from '../Classes/Gift';
 import { MatDialog } from '@angular/material/dialog';
+import { Guest } from '../Classes/Guest';
+import { User } from '../Classes/User';
+import { Bus } from '../Classes/Bus';
 
 
 @Injectable({
@@ -20,11 +23,12 @@ export class EventService {
   readonly APIUrlGuest = "https://localhost:44304/api/Guest"
   readonly APIUrlTable = "https://localhost:44304/api/Table"
   readonly APIUrlBus = "https://localhost:44304/api/Bus"
+  readonly APIUrlUser ="https://localhost:44304/api/User"
 
-  IdentifiedEvent:Event=new Event();
-  isIdentified:boolean=false;
-  
-  constructor(private http: HttpClient,public dialog: MatDialog) { }
+  IdentifiedEvent: Event = new Event();
+  isIdentified = false;
+
+  constructor(private http: HttpClient, public dialog: MatDialog) { }
 
   //Event
 
@@ -32,16 +36,34 @@ export class EventService {
     return this.http.get(`${this.APIUrlEvent}/GetEventById/${val}`);
   }
 
-  AddEvent(val: Event) {    
+  GetAllEvents(): Observable<Event[]> {
+    return this.http.get<Event[]>(`${this.APIUrlEvent}/GetAllEvents`);  
+  }
+
+  AddEvent(val: Event) {
     return this.http.post(this.APIUrlEvent + '/AddEvent', val);
   }
+//עובד של שני
+  // Login(phone: any, password: any): Observable<any> {
 
-  Login(phone:any,password:any): Observable<any> {
-    return this.http.post(this.APIUrlEvent + '/Login',{phone:"phone", password:"password"});
+  //   const params = new HttpParams()
+  //     .set('phone', phone)
+  //     .set('password', password);
+
+  //   return this.http.post(this.APIUrlEvent + "/Login", null, { params });
+
+  // }
+
+  Login(phone: any, password: any): Observable<any> {
+    const params = new HttpParams()
+      .set('phone', phone)
+      .set('password', password);
+    return this.http.post(this.APIUrlEvent + "/Login", null, { params });
+
   }
 
-  UpdateEvent(val: any) {
-    return this.http.put(this.APIUrlEvent + '/UpdateEvent', val);
+  UpdateEvent(val: any) : Observable<any>{
+    return this.http.put(`${this.APIUrlEvent} /UpdateEvent/${val.userId}`, val);
   }
 
   //Event Gift
@@ -68,36 +90,40 @@ export class EventService {
   }
 
   //Guest
-  AddGuest(val: any) {
+  AddGuest(val: Guest) {
     return this.http.post(this.APIUrlGuest + '/AddGuest', val);
   }
 
-  DeleteGuest(val:any){
+  DeleteGuest(val: any) {
     return this.http.delete(`${this.APIUrlGuest}/DeleteGuest/${val}`);
   }
 
-  GetAllConfirmGuests(val: any): Observable<any> {
-    return this.http.get(`${this.APIUrlGuest}/GetGiftsByEventType/${val}`);
+  GetAllConfirmGuests(val: any): Observable<Guest[]> {
+    return this.http.get<Guest[]>(`${this.APIUrlGuest}/GetGiftsByEventType/${val}`);
   }
 
-  GetAllInvitedGuests(val: any): Observable<any> {
-    return this.http.get(`${this.APIUrlGuest}/GetAllInvitedGuests/${val}`);
+  GetAllInvitedGuests(val: any): Observable<Guest[]> {
+    return this.http.get<Guest[]>(`${this.APIUrlGuest}/GetAllInvitedGuests/${val}`);
   }
 
-  GetAllUnConfirmGuests(val: any): Observable<any> {
-    return this.http.get(`${this.APIUrlGuest}/GetAllUnConfirmGuests/${val}`);
+  GetAllUnConfirmGuests(val: any): Observable<Guest[]> {
+    return this.http.get<Guest[]>(`${this.APIUrlGuest}/GetAllUnConfirmGuests/${val}`);
+  }
+
+  GetAllConfirmGuestsCount(val: any): Observable<number> {
+    return this.http.get<number>(`${this.APIUrlGuest}/GetAllConfirmGuestsCount/${val}`);
   }
 
   GetGuestByPhone(phone: string, eventId: number) {
     return this.http.get<any>(this.APIUrlGuest + '/GetAGiftFromGuest');
   }
 
-//Table
-AddTable(val: any) {
+  //Table
+  AddTable(val: any) {
     return this.http.post(this.APIUrlTable + '/AddTable', val);
   }
 
-  DeleteTable(val:any){
+  DeleteTable(val: any) {
     return this.http.delete(`${this.APIUrlTable}/DeleteTable/${val}`);
   }
 
@@ -117,16 +143,16 @@ AddTable(val: any) {
     return this.http.get(`${this.APIUrlTable}/GuestsInTable/${val}`);
   }
 
-//  UpdateGuestToTable(guestId: number,tableNum:number) {
-//    return this.http.put(this.APIUrlEvent + '/UpdateGuestToTable', guestId ,tableNum);
-//  }
+  //  UpdateGuestToTable(guestId: number,tableNum:number) {
+  //    return this.http.put(this.APIUrlEvent + '/UpdateGuestToTable', guestId ,tableNum);
+  //  }
 
-//Bus
+  //Bus
   AddBus(val: any) {
     return this.http.post(this.APIUrlBus + '/AddBus', val);
   }
 
-  DeleteBus(val:any){
+  DeleteBus(val: any) {
     return this.http.delete(`${this.APIUrlBus}/DeleteBus/${val}`);
   }
 
@@ -134,32 +160,40 @@ AddTable(val: any) {
     return this.http.get(`${this.APIUrlBus}/GetAllBus/`);
   }
 
-  GetAllBusesOfEvent(val: any): Observable<any> {
-    return this.http.get(`${this.APIUrlBus}/GetAllBusesOfEvent/${val}`);
+  GetAllBusesOfEvent(val: any): Observable<Bus[]> {
+    return this.http.get<Bus[]>(`${this.APIUrlBus}/GetAllBusesOfEvent/${val}`);
   }
 
-  GetSumPersonInBus(val: any){
-    return this.http.get(`${this.APIUrlBus}/GetSumPersonInBus`,val);
+  GetSumPersonInBus(val: any) {
+    return this.http.get(`${this.APIUrlBus}/GetSumPersonInBus`, val);
   }
 
   EmptySeatsOnTheBus(val: any) {
-    return this.http.get(`${this.APIUrlBus}/EmptySeatsOnTheBus`,val);
+    return this.http.get(`${this.APIUrlBus}/EmptySeatsOnTheBus`, val);
   }
 
-//  UpdateGuestToBus(guestId: number, busId:number) {
-//    return this.http.put(`${this.APIUrlBus}/UpdateGuestToBus/"${guestId}","${busId}"`);
-//  }
-//
-//  UpdateRoute(busId: number, RouteToUpdate:string) {
-//    return this.http.put(`${this.APIUrlBus}/UpdateRoute/['MyCompB', {id: "busId", id2: "RouteToUpdate"}])
-//
-//);
-//  }
+  //User
+  AddUser(val: User) : Observable<any>{
+    return this.http.post(this.APIUrlUser + '/AddUser', val);
+  }
 
 
 
 
-  
+  //  UpdateGuestToBus(guestId: number, busId:number) {
+  //    return this.http.put(`${this.APIUrlBus}/UpdateGuestToBus/"${guestId}","${busId}"`);
+  //  }
+  //
+  //  UpdateRoute(busId: number, RouteToUpdate:string) {
+  //    return this.http.put(`${this.APIUrlBus}/UpdateRoute/['MyCompB', {id: "busId", id2: "RouteToUpdate"}])
+  //
+  //);
+  //  }
+
+
+
+
+
 
 
 

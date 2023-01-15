@@ -54,8 +54,6 @@ export class CreateEventComponent implements OnInit {
     else
     alert("לא תקין");
   }
-
-
 }
 
 

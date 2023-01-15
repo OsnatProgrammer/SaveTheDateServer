@@ -1,1 +1,26 @@
+<app-nav></app-nav>
 <p>add-guest works!</p>
+<form [formGroup]="UserForm">
+
+    <mat-form-field appearance="fill" class="width-50">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Enter Name Guest"  formControlName="name" >      
+    </mat-form-field> 
+
+    <mat-form-field appearance="fill" class="width-50">
+        <mat-label>Phone</mat-label>
+        <input matInput placeholder="Enter Phone Guest"  formControlName="phone" >      
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="width-50">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Enter Email Guest"  formControlName="email" >      
+      </mat-form-field>
+
+
+    <br/> <br/> <button mat-raised-button  (click)="AddUser()" class="button" >Add Guest</button>
+
+  </form>
+
+  <router-outlet></router-outlet>
+

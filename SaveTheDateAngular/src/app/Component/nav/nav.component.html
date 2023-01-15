@@ -4,7 +4,7 @@
     <mat-sidenav-container>
         
         <mat-sidenav-content >
-          <mat-toolbar color=primary style="background-color:rgb(3, 70, 90)">
+          <mat-toolbar color=primary style="background-color:rgb(78, 3, 90)">
            <div fxHide.gt-xs>
              <button mat-icon-button>
               <mat-icon>menu</mat-icon>
@@ -14,22 +14,22 @@
     
            
            <div fxFlex fxLayout fxLayoutAlign="flex-end"  fxHide.xs >
-              <ul fxLayout fxLayoutGap="20px" class="navigation-items">
+              <ul fxLayout fxLayoutGap="100px" class="navigation-items">
     
                  <li *ngIf="this.EventSer.isIdentified">
                   <mat-icon matSuffix>person</mat-icon> 
-                  <span style="font-family: Candara;"> Hello {{EventSer.IdentifiedEvent.Name}}  {{EventSer.IdentifiedEvent.DateEvent}}</span>
+                  <span style="font-family: Candara;"> Hello {{this.EventSer.IdentifiedEvent.Name}}  {{this.EventSer.IdentifiedEvent.DateEvent}}</span>
                 </li>
                   
-                  <!-- <li *ngIf="!this.EventSer.isIdentified">
+                   <li *ngIf="!this.EventSer.isIdentified">
                       <a routerLink="/Login">                        
                         <mat-icon class="icon">input</mat-icon>
 
-                        <span  class="label" style="font-family: Candara;" >Login</span>
+                        <span  class="label" style="font-family: Candara;" >התחברות</span>
                        </a>
-                  </li> -->
-
-                   <li><!--(click)="showHome()" -->
+                  </li> 
+<!--(click)="showHome()" -->
+                    <li>
                     <a routerLink="/Home" >
                         <mat-icon class="icon">home</mat-icon>
                         <span class="label" style="font-family: Candara;">Home</span>
@@ -37,35 +37,40 @@
                   </li>
                     <li>
                       <a routerLink="/Table Placement">
-                        <mat-icon> restaurant_menu </mat-icon>
-                        <mat-icon> group_add </mat-icon>                     
+                        <mat-icon class="icon"> restaurant_menu </mat-icon>
+                        <mat-icon class="icon"> group_add </mat-icon>                     
                           <span class="label" style="font-family: Candara;">סידור שולחנות</span>
                       </a>
-                    </li>
-                    <li>
+                    </li> 
+                     <li>
                       <a routerLink="/Show Arrival">
-                        <mat-icon>event_available</mat-icon>
+                        <mat-icon class="icon">event_available</mat-icon>
                           <span class="label" style="font-family: Candara;">אישורי הגעה</span>
                       </a>
                     </li>
                     <li>
                         <a routerLink="/Event Shuttle">
-                            <mat-icon> directions_bus </mat-icon>                           
+                            <mat-icon class="icon"> directions_bus </mat-icon>                           
                             <span class="label" style="font-family: Candara;">עדכון הסעות לאירוע</span>
                         </a>
-                      </li>
+                      </li> 
                       <li>
                         <a routerLink="/Add Guest">
-                            <mat-icon>person_add</mat-icon>
-                            <span class="label" style="font-family: Candara;">הוספת מוזמנים לאירועs</span>
+                            <mat-icon class="icon">person_add</mat-icon>
+                            <span class="label" style="font-family: Candara;">  הוספת מוזמנים לאירוע</span>
                         </a>
-                      </li>
+                      </li> 
                   <li (click)="logOut()">
                       <a>
                         <mat-icon class="icon">input</mat-icon>
-                        <span class="label" style="font-family: Candara;">LogOut</span>
+                        <span class="label" style="font-family: Candara;">יציאה</span>
                        </a>
                   </li>
+<!-- הפייפ של התאריך לא עובד -->
+                  
+                 <li *ngIf="this.EventSer.isIdentified">
+                  <span style="font-family: Candara;"> {{this.EventSer.IdentifiedEvent.Name}}   {{this.EventSer.IdentifiedEvent.DateEvent | date:'short'}}</span>  
+                </li>
               </ul>
            </div>
           </mat-toolbar>

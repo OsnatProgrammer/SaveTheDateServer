@@ -56,8 +56,8 @@ namespace SaveTheDate
             services.AddScoped<ITableDL, TableDL>();
             services.AddScoped<ITableBL, TableBL>();
 
-           // services.AddScoped<IUserDL, UserDL>();
-           // services.AddScoped<IUserBL, UserBL>();
+            services.AddScoped<IUserDL, UserDL>();
+            services.AddScoped<IUserBL, UserBL>();
 
             services.AddSwaggerGen(c =>
             {

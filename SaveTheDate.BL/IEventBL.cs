@@ -1,6 +1,6 @@
 ﻿using SaveTheDate.DL.Models;
 using SaveTheDate.DTO;
-
+using System.Collections.Generic;
 
 namespace SaveTheDate.BL
 {
@@ -9,6 +9,9 @@ namespace SaveTheDate.BL
         bool AddEvent(EventDTO newEventDTO);
         bool UpdateEvent(int EventID, EventDTO updaeteDetailsDTO);
         Event GetEventById(int eventID);
-        bool Login(string phone, string password);
+        List<Event> GetAllEvents();
+        //bool Login(string phone, string password);
+        Event Login(string phone, string password);
+
     }
 }

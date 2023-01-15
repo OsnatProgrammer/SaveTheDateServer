@@ -11,6 +11,7 @@ namespace SaveTheDate.DL
         List<Guest> GetAllConfirmGuests(int id);
         List<Guest> GetAllInvitedGuests(int id);
         List<Guest> GetAllUnConfirmGuests(int id);
+        int GetAllConfirmGuestsCount(int id);
         Guest GetGuestByPhone(string phone, int eventId);
     }
 }

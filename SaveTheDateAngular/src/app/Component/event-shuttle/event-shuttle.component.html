@@ -1,1 +1,9 @@
+<app-nav></app-nav>
 <p>event-shuttle works!</p>
+
+<div *ngFor="let i of showAllBuses">
+    {{i.Route}}
+</div>
+
+<br/> <br/> <button mat-raised-button  a routerLink="/Add Shuttle" class="button"> Add Shuttle</button>
+
