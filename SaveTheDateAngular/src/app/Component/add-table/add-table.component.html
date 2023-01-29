@@ -1,0 +1,16 @@
+<p>add-table works!</p>
+
+<form [formGroup]="TableForm">
+    <mat-form-field appearance="fill" class="width-50">
+      <mat-label>תאור השולחן</mat-label>
+      <input matInput placeholder="הכנס תאור שולחן"  formControlName="description" >      
+    </mat-form-field> 
+
+    <mat-form-field appearance="fill" class="width-50">
+      <mat-label>מספר כסאות</mat-label>
+      <input matInput placeholder="הכנס מקומות שולחן"  formControlName="seatsNum" >      
+    </mat-form-field> 
+</form>
+
+<br/> <br/> <button mat-raised-button  (click)="addTable()" class="button" >Add Table</button>
+

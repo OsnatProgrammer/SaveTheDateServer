@@ -1,4 +1,32 @@
 <p>create-event works!</p>
+
+<input type="file" (change)="ReadExcel($event)">
+<div *ngIf="showListGust">
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>phone</th>
+      <th>Email</th> 
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of ExcelData">
+      <th>{{data.Name}}</th>
+      <th>{{data.Phone}}</th>
+      <th>{{data.Email}}</th> 
+
+    </tr>
+  </tbody>
+</table>
+
+<br/> <br/> <button mat-raised-button  (click)="AddList()" class="button" >הוספת רשימה</button>
+
+</div>
+
+
+
+
 <form [formGroup]="eventForm">
     <mat-form-field appearance="fill" class="width-50">
       <mat-label>User Id</mat-label>
@@ -16,7 +44,7 @@
 
     <mat-form-field appearance="fill" >
       <mat-label >Enter Event Date</mat-label>
-    <input matInput [matDatepicker]="picker" placeholder="Enter Event Date" formControlName="dateEvent">
+    <input matInput [matDatepicker]="picker" placeholder="Enter Event Date" formControlName="date">
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>

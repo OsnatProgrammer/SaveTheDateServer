@@ -1,13 +1,18 @@
+import { EventType } from "./EventType";
+import { GiftCategory } from "./GiftCategory";
 
 export class Gift{
-        constructor(
-            public Id: number,
-            public Name:string,
-            public CategoryId: number,
-            public EventTypeId: number
+        
+     Id?: number;
+     Name!:string;
+     CategoryId!: number;
+     EventTypeId!: number;
+
+     GiftCategory?:GiftCategory
+     EventType?:EventType
            
-        ){}
-        };
+constructor(){}
+};
     
 
 

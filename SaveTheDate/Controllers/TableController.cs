@@ -76,7 +76,7 @@ namespace SaveTheDate.API.Controllers
 
         [HttpPost]
         [Route("AddTable")]
-        public bool AddTable(TableDTO newTable)
+        public bool AddTable([FromBody]TableDTO newTable)
         {
             try
             {

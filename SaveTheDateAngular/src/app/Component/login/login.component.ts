@@ -36,6 +36,7 @@ export class LoginComponent implements OnInit {
     this.EventSer.Login(this.eventForm.controls.phone.value, this.eventForm.controls.password.value)
       .subscribe(data => {
         if (data) {
+          localStorage.setItem("user",JSON.stringify(data));
           this.EventSer.IdentifiedEvent=data;
           this.EventSer.isIdentified = true;
           console.log("data",data)

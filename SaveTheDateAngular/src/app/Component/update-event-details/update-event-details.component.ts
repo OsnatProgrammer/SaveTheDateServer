@@ -29,7 +29,7 @@ export class UpdateEventDetailsComponent implements OnInit {
       
       userId: new FormControl(0,[Validators.required]),
       eventType:new FormControl(0,[Validators.required,Validators.min(1),Validators.max(3)]),
-      dateEvent:new FormControl(new Date(),[Validators.required]),
+      date:new FormControl(new Date(),[Validators.required]),
       password:new FormControl("",[Validators.required]),
       name:new FormControl("",[Validators.required]),
       location:new FormControl("",[Validators.required]),
@@ -39,7 +39,7 @@ export class UpdateEventDetailsComponent implements OnInit {
  }); 
     this.eventForm.controls['userId'].setValue(this.EventSer.IdentifiedEvent.UserId);
     this.eventForm.controls['eventType'].setValue(this.EventSer.IdentifiedEvent.EventType);
-    this.eventForm.controls['dateEvent'].setValue(this.EventSer.IdentifiedEvent.DateEvent);
+    this.eventForm.controls['date'].setValue(this.EventSer.IdentifiedEvent.Date);
     this.eventForm.controls['name'].setValue(this.EventSer.IdentifiedEvent.Name);
     this.eventForm.controls['location'].setValue(this.EventSer.IdentifiedEvent.Location);
     this.eventForm.controls['link'].setValue(this.EventSer.IdentifiedEvent.Link);
@@ -50,12 +50,16 @@ export class UpdateEventDetailsComponent implements OnInit {
   MyIdentifiedEvent:Event =this.EventSer.IdentifiedEvent
   
   edit(eventToEdit:Event) {
-  
+  eventToEdit.Id=this.EventSer.IdentifiedEvent.Id;
+  eventToEdit.Password=this.EventSer.IdentifiedEvent.Password;
     console.log('eventToEdit', eventToEdit);
     // this.myEvent = {...eventToEdit};
     this.EventSer.UpdateEvent(eventToEdit).subscribe(data => {
       if (data) {
         console.log("data",data)
+        // יש לפתוח תיבת דיאלוג שהשינויים נשמרו בהצלחה
+        this.myRoute.navigate(["/Event Page"]);
+
       }
       else { alert("הנתונים אינם תואמים, נסה שוב") }
   

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using SaveTheDate.BL;
 using SaveTheDate.DTO;
 using System;
+using System.Threading.Tasks;
 
 namespace SaveTheDate.API.Controllers
 {
@@ -16,9 +17,26 @@ namespace SaveTheDate.API.Controllers
             {
                 _UserBL = UserBL;
             }
-            [HttpPost]
+
+         [HttpGet]
+         [Route("GetAllUsers")]
+         public IActionResult GetAllUsers()
+         {
+             try
+             {
+                 return
+                 Ok(_UserBL.GetAllUsers());
+             }
+             catch (Exception ex)
+             {
+                 return StatusCode(500, ex.Message);
+             }
+         }
+
+
+        [HttpPost]
             [Route("AddUser")]
-            public int AddUser(UserDTO newUser)
+            public async Task<int> AddUser(UserDTO newUser)
             {
                 try
                 {

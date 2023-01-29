@@ -1,2 +1,10 @@
 <p>gifts-list works!</p>
+
+
+<ul *ngFor="let Gift of showAllGifts">
+    <mat-checkbox class="example-margin">{{Gift.Name}}</mat-checkbox>
+</ul>
+
+<button mat-button (click)="saveChange()"> </button> <br>
+
 <router-outlet></router-outlet>

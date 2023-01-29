@@ -1,13 +1,20 @@
+import { Gift } from "./Gift";
+import { User } from "./User";
+import { Event } from "./Event";
 
+  export class EventGift{
+      
+       Id?: number;
+       GiftId!: number;
+       EventId!:number;
+       UserId!:number;
+       Status!:boolean;
+       Blessing!: string;
 
-        export class EventGift{
-            constructor(
-                public Id: number,
-                public GiftId: number,
-                public EventId:number,
-                public UserId:number,
-                public Status:boolean,
-                public Blessing: string
-            ){}
-            };
+       Event?:Event
+       Gift?:Gift
+       User?:User
+
+      constructor(){}
+    };
         

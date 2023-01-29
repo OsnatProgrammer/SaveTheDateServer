@@ -38,7 +38,8 @@ export class AddGuestComponent implements OnInit {
   }
 
 AddGuest(userId:number){
-      this.newGuest={UserId:userId,EventId:this.EventSer.IdentifiedEvent.Id,ArrivalConf:false}
+      this.newGuest={UserId:userId,EventId:this.EventSer.IdentifiedEvent.Id,
+        ArrivalConf:false}
       this.EventSer.AddGuest(this.newGuest).subscribe((data)=>{alert(data);console.log("data",data)})
       }
 }

@@ -10,14 +10,27 @@ import { EventService } from 'src/app/Service/event.service';
 })
 export class GuestLoginComponent implements OnInit {
   
-  eventForm!: FormGroup;
+  GuestLoginForm!: FormGroup;
 
   constructor(private EventSer: EventService, private myRoute: Router) { }
 
 //בדיקות תקינות
   ngOnInit(): void {
-    this.eventForm = new FormGroup({
+    this.GuestLoginForm = new FormGroup({
       phone: new FormControl(0,[Validators.required]),
- }); 
+    }); 
   }
+
+  CheckUser(){
+    this.EventSer.GetGuestByPhone(this.GuestLoginForm.controls.phone.value, 2)
+    .subscribe(data => {
+      if (data) {
+        console.log("data",data)
+        this.myRoute.navigate(["/Guest Page"])         
+      }
+      else { alert("הנתונים אינם תואמים, נסה שוב") }
+      }
+    );
+  }
+
 }

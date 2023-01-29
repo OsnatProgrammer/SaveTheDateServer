@@ -1,4 +1,5 @@
-﻿using SaveTheDate.DL.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using SaveTheDate.DL.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace SaveTheDate.DL
         {
             try
             {
-                return SaveTheDateContext.Guests.Where(x => x.EventId == id).ToList();
+                return SaveTheDateContext.Guests.Where(x => x.EventId == id).Include(x => x.User).ToList();
             }
             catch (Exception ex)
             {
@@ -31,7 +32,8 @@ namespace SaveTheDate.DL
         {
             try
             {
-                return SaveTheDateContext.Guests.Where(x => x.EventId == id && x.ArrivalConf == true).ToList();
+                return SaveTheDateContext.Guests.Where(x => x.EventId == id && x.ArrivalConf == true)
+                    .Include(x=> x.User).ToList();
             }
             catch (Exception ex)
             {
@@ -45,7 +47,9 @@ namespace SaveTheDate.DL
         {
             try
             {
-                return SaveTheDateContext.Guests.Where(x => x.EventId == id && x.ArrivalConf == false).ToList();
+                return SaveTheDateContext.Guests.Where(x => x.EventId == id && x.ArrivalConf == false)
+                    .Include(x => x.User)
+                    .ToList();
             }
             catch (Exception ex)
             {
@@ -59,7 +63,7 @@ namespace SaveTheDate.DL
         {
             try
             {
-                return SaveTheDateContext.Guests.Where(x => x.EventId == id && x.ArrivalConf == true).Count();
+                return SaveTheDateContext.Guests.Where(x => x.EventId == id && x.ArrivalConf == true).Include(x => x.User).Count();
             }
             catch (Exception ex)
             {

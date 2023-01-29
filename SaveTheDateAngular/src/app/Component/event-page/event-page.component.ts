@@ -15,7 +15,7 @@ export class EventPageComponent implements OnInit {
   
   hide = true;
   eventId!: string | any
-  myEvent: Event = {UserId:0, EventType: 1, DateEvent: new Date(), Password: '',Name: '',Location: ''};
+  myEvent: Event = {UserId:0, EventType: 1, Date: new Date(), Password: '',Name: '',Location: ''};
   newEvent: Event =new Event();
   //myEvent:Event|any
 
@@ -28,7 +28,7 @@ export class EventPageComponent implements OnInit {
     this.eventForm = new FormGroup({
       userId: new FormControl(0,[Validators.required,Validators.min(1),Validators.max(3)]),
       eventType:new FormControl(0,[Validators.required]),
-      dateEvent:new FormControl(new Date(),[Validators.required]),
+      date:new FormControl(new Date(),[Validators.required]),
       password:new FormControl("",[Validators.required]),
       name:new FormControl("",[Validators.required]),
       location:new FormControl("",[Validators.required]),

@@ -36,7 +36,7 @@ namespace SaveTheDate.API.Controllers
         }
 
         [HttpGet]
-        [Route("GetAllBusesOfEvent")]
+        [Route("GetAllBusesOfEvent/{eventId}")]
         public IActionResult GetAllBusesOfEvent(int eventId)
         {
             try

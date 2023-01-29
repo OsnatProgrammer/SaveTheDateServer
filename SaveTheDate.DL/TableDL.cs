@@ -58,9 +58,6 @@ namespace SaveTheDate.DL
             }
         }
 
-
-
-
         //שליפת כל שולחן עם שמות המוזמנים היושבים בו 
         // השליפה של מקומות פנויים תעשה באנגולר
         public List<Guest> GuestsInTable(int tableNum)
@@ -100,13 +97,18 @@ namespace SaveTheDate.DL
         }
 
         //PUT
-        //עידכון אדם לשולחן
+        //להוסיף אדם לשולחן
         public bool UpdateGuestToTable(int guestId, int tableNum)
         {
             try
             {
                 Guest guestToUpdate = SaveTheDateContext.Guests.SingleOrDefault(x => x.UserId.Equals(guestId));
                 guestToUpdate.TableNum = tableNum;
+                //שליפה של שולחן לפי מס שולחן ומס ארוע
+                //    בשולחן הזה לעדכן מס מושבים++
+                Table guestToUpdateTable = SaveTheDateContext.Tables.SingleOrDefault(x => x.Id.Equals(tableNum));
+                    guestToUpdateTable.SeatsNum += 1;
+               
                 SaveTheDateContext.SaveChanges();
                 return true;
             }

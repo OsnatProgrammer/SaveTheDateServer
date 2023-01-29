@@ -1,15 +1,20 @@
+import { EventType } from "./EventType";
+import { User } from "./User";
+
 export class Event {
     Id?: number;
     UserId!: number;
     EventType!: number;
-    DateEvent!: Date;
+    Date!: Date;
     Password!: string;
     Name!: string;
     Location!: string;
     Link?: string;
     Text?: string;
     Picture?: string;
-    constructor(
-      
-    ) { }
+
+    // EventType?:EventType;
+    User?:User;
+
+    constructor() { }
 }

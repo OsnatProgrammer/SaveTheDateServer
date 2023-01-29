@@ -1,1 +1,28 @@
 <p>table-placement works!</p>
+
+<form [formGroup]="myForm">
+    <mat-form-field appearance="fill" >
+        <mat-label>סינון</mat-label>
+        <mat-select formControlName="selected" (selectionChange)="selectFilter($event.value)" >
+            <mat-option  value="all">כולם</mat-option>
+            <mat-option value="haveTable">שובצו</mat-option>
+            <mat-option value="noTable">לא שובצו</mat-option>
+        </mat-select>
+    </mat-form-field>
+</form>
+
+<li *ngFor="let g of GuestsToShow">
+    {{g.User?.Name}}
+    {{g.TableNum}}
+</li>
+
+<p>מספר שולחן וכמות המושבים הנותרים בו</p>
+<li *ngFor="let t of showAllTables">
+   
+   {{t.Id}} 
+   {{12-t.SeatsNum}}
+
+</li>
+<br/> <br/> <button mat-raised-button  a routerLink="/Add Table" class="button"> Add Table</button>
+<!-- //לפתוח קומפוננטה להוספת אדם לשולחן -->
+<br/> <br/> <button mat-raised-button  a routerLink="/Add Guest To Table" class="button"> Add Guest to Table</button>

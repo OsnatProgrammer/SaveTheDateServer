@@ -18,7 +18,7 @@
     
                  <li *ngIf="this.EventSer.isIdentified">
                   <mat-icon matSuffix>person</mat-icon> 
-                  <span style="font-family: Candara;"> Hello {{this.EventSer.IdentifiedEvent.Name}}  {{this.EventSer.IdentifiedEvent.DateEvent}}</span>
+                  <span style="font-family: Candara;"> Hello {{this.EventSer.IdentifiedEvent.Name}}  {{this.EventSer.IdentifiedEvent.Date}}</span>
                 </li>
                   
                    <li *ngIf="!this.EventSer.isIdentified">
@@ -69,7 +69,7 @@
 <!-- הפייפ של התאריך לא עובד -->
                   
                  <li *ngIf="this.EventSer.isIdentified">
-                  <span style="font-family: Candara;"> {{this.EventSer.IdentifiedEvent.Name}}   {{this.EventSer.IdentifiedEvent.DateEvent | date:'short'}}</span>  
+                  <span style="font-family: Candara;"> {{this.EventSer.IdentifiedEvent.Name}}   {{this.EventSer.IdentifiedEvent.Date | date:'short'}}</span>  
                 </li>
               </ul>
            </div>

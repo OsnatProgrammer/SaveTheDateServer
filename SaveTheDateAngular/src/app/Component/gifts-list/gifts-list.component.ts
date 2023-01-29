@@ -18,4 +18,9 @@ this.EventSer.GetGiftsByEventType(this.EventSer.IdentifiedEvent.EventType).subsc
   console.log(data) },error => { throw error },
   () => console.log("finished"));
   }
+
+  saveChange(){
+    
+  }
+
 }

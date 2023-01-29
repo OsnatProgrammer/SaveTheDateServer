@@ -1,12 +1,16 @@
+import { Event } from "./Event";
+
 export class Bus{
-    constructor(
-        public Id: number,
-        public EventId: number,
-        public SeatsNum:number,
-        public Route:string,
-        public DepartureTime: Date
-        
-    ){}
+
+     Id?: number;
+     EventId!: number;
+     SeatsNum!:number;
+     Route!:string;
+     DepartureTime!: Date;
+     
+     Event?:Event;
+
+    constructor(){}
     };
 
 

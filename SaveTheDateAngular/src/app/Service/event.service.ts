@@ -27,6 +27,7 @@ export class EventService {
 
   IdentifiedEvent: Event = new Event();
   isIdentified = false;
+  numOfSeatsInTable:number=0
 
   constructor(private http: HttpClient, public dialog: MatDialog) { }
 
@@ -62,8 +63,8 @@ export class EventService {
 
   }
 
-  UpdateEvent(val: any) : Observable<any>{
-    return this.http.put(`${this.APIUrlEvent} /UpdateEvent/${val.userId}`, val);
+  UpdateEvent(val: Event) : Observable<any>{
+    return this.http.put(`${this.APIUrlEvent}/UpdateEvent/${val.Id}`, val);
   }
 
   //Event Gift
@@ -99,7 +100,7 @@ export class EventService {
   }
 
   GetAllConfirmGuests(val: any): Observable<Guest[]> {
-    return this.http.get<Guest[]>(`${this.APIUrlGuest}/GetGiftsByEventType/${val}`);
+    return this.http.get<Guest[]>(`${this.APIUrlGuest}/GetAllConfirmGuests/${val}`);
   }
 
   GetAllInvitedGuests(val: any): Observable<Guest[]> {
@@ -119,9 +120,13 @@ export class EventService {
   }
 
   //Table
-  AddTable(val: any) {
+  AddTable(val: any): Observable<any>{
     return this.http.post(this.APIUrlTable + '/AddTable', val);
   }
+
+  // AddTable(val: any){
+  //   return this.http.post(this.APIUrlTable + '/AddTable', val);
+  // }
 
   DeleteTable(val: any) {
     return this.http.delete(`${this.APIUrlTable}/DeleteTable/${val}`);
@@ -142,19 +147,22 @@ export class EventService {
   GuestsInTable(val: any): Observable<any> {
     return this.http.get(`${this.APIUrlTable}/GuestsInTable/${val}`);
   }
-
-  //  UpdateGuestToTable(guestId: number,tableNum:number) {
-  //    return this.http.put(this.APIUrlEvent + '/UpdateGuestToTable', guestId ,tableNum);
-  //  }
+ 
+   UpdateGuestToTable(guestId: any,tableNum:any):Observable<any> {
+    const params= new HttpParams()
+    .set('guestId',guestId)
+    .set('tableNum',tableNum);
+     return this.http.put(this.APIUrlEvent + "/UpdateGuestToTable", null ,{ params });
+   }
 
   //Bus
-  AddBus(val: any) {
+  AddBus(val: any): Observable<any> {
     return this.http.post(this.APIUrlBus + '/AddBus', val);
   }
 
   DeleteBus(val: any) {
     return this.http.delete(`${this.APIUrlBus}/DeleteBus/${val}`);
-  }
+  } 
 
   GetAllBus(): Observable<any> {
     return this.http.get(`${this.APIUrlBus}/GetAllBus/`);
@@ -173,6 +181,10 @@ export class EventService {
   }
 
   //User
+ GetAllUsers(): Observable<User[]> {
+    return this.http.get<User[]>(`${this.APIUrlUser}/GetAllUsers`);
+  }
+
   AddUser(val: User) : Observable<any>{
     return this.http.post(this.APIUrlUser + '/AddUser', val);
   }

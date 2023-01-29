@@ -1,2 +1,65 @@
 <p>registration works!</p>
-<router-outlet></router-outlet>
+
+
+<form [formGroup]="registrationForm">
+    <mat-form-field appearance="fill" class="width-50">
+      <mat-label>User Id</mat-label>
+      <input matInput placeholder="Enter User Id"  formControlName="userId" >      
+    </mat-form-field> 
+
+    <!-- <mat-form-field appearance="fill" formControlName="eventType">
+      <mat-label>Event Type</mat-label>
+      <mat-select>
+        <mat-option value="חתונה">חתונה</mat-option>
+        <mat-option value="בר מצווה">בר מצווה</mat-option>
+        <mat-option value="ברית">ברית</mat-option>
+      </mat-select>
+    </mat-form-field> -->
+
+    <mat-form-field appearance="fill" >
+      <mat-label >Enter Event Date</mat-label>
+    <input matInput [matDatepicker]="picker" placeholder="Enter Event Date" formControlName="date">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" >
+      <mat-label> Password</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'"  placeholder="Password"  formControlName="password" >
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" >
+      <mat-label>Event Name</mat-label>
+      <input matInput placeholder="Enter Event Name"  formControlName="name" >
+     
+    </mat-form-field>   
+    
+    <mat-form-field appearance="fill" >
+      <mat-label>Event Location</mat-label>
+      <input matInput placeholder="Enter Event Location"  formControlName="location" >
+    </mat-form-field>  
+
+    <mat-form-field appearance="fill" >
+      <mat-label>Event link</mat-label>
+      <input matInput placeholder="Enter Event link"  formControlName="link" >
+    </mat-form-field>  
+
+    <mat-form-field appearance="fill" >
+      <mat-label>Event text</mat-label>
+      <input matInput placeholder="Enter Event text"  formControlName="text" >
+    </mat-form-field>  
+
+    <mat-form-field appearance="fill" >
+      <mat-label>Event picture</mat-label>
+      <input matInput placeholder="Enter Event picture"  formControlName="picture" >
+    </mat-form-field>  
+
+    <br/> <br/> <button mat-raised-button  (click)="AddEvent()" class="button" >Add Event</button>
+
+  </form>
+
+  <router-outlet></router-outlet>
+

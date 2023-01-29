@@ -1,11 +1,16 @@
+import { Event } from "./Event";
+
+
 export class Table{
-    constructor(
-        public Id: number,
-        public EventId:number,
-        public SeatsNum: number,
-        public Description:string,
-        
-    ){}
+
+    Id?: number;
+    EventId!:number;
+    SeatsNum!: number;
+    Description!:string;
+
+    Event?:Event
+
+    constructor(){}
     };
 
 

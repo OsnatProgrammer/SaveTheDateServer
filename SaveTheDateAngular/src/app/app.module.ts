@@ -75,7 +75,10 @@ import { DialogBoxComponent } from './Component/dialog-box/dialog-box.component'
 import { PageNotFoundComponent } from './Component/page-not-found/page-not-found.component';
 import { NavComponent } from './Component/nav/nav.component';
 import { NavGuestComponent } from './Component/nav-guest/nav-guest.component';
-
+import { AddTableComponent } from './Component/add-table/add-table.component';
+import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+import { NgxMaterialTimepickerTheme } from 'ngx-material-timepicker';
+import { CommonModule } from '@angular/common';
 
 
 
@@ -107,6 +110,7 @@ import { NavGuestComponent } from './Component/nav-guest/nav-guest.component';
     PageNotFoundComponent,
     NavComponent,
     NavGuestComponent,
+    AddTableComponent,
 
     //,
     //MatInputModule,
@@ -185,9 +189,11 @@ import { NavGuestComponent } from './Component/nav-guest/nav-guest.component';
    // PortalModule,
    // ScrollingModule,
     MatButtonModule,
-    
-    
+    NgxMaterialTimepickerModule,
+    CommonModule,
   ],
+
+
   providers: [EventService,GuestService],
   bootstrap: [AppComponent]
 })

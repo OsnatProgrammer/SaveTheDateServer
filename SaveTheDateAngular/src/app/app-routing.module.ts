@@ -26,6 +26,7 @@ import { AddCashGiftComponent } from './Component/add-cash-gift/add-cash-gift.co
 import { AddGiftComponent } from './Component/add-gift/add-gift.component';
 import { AppComponent } from './app.component';
 import { NavComponent } from './Component/nav/nav.component';
+import { AddTableComponent } from './Component/add-table/add-table.component';
 
 const routes: Routes = [
 
@@ -40,6 +41,7 @@ const routes: Routes = [
   {path: "Add Guest", component: AddGuestComponent },
   {path: "Show Arrival", component: ShowArrivalConfirmationComponent },
   {path: "Table Placement", component: TablePlacementComponent },
+  {path: "Add Table", component: AddTableComponent },
   {path: "Event Shuttle", component: EventShuttleComponent },
   {path: "Update EventDetails", component: UpdateEventDetailsComponent },
   {path: "Add Shuttle", component: AddShuttleComponent },
@@ -51,7 +53,7 @@ const routes: Routes = [
   {path: "Event Page", component: EventPageComponent},
   
   {path: "Guest Login", component: GuestLoginComponent},
-  {path: "Guest Login", component: GuestPageComponent},
+  {path: "Guest Page", component: GuestPageComponent},
   {path: "Add Gift", component: AddGiftComponent},
   {path: "Register To Shuttle", component: RegisterToShuttleComponent},
   {path: "Add Blessing", component: AddBlessingComponent},

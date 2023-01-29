@@ -1,12 +1,12 @@
 <p>guest-login works!</p>
 
-<form [formGroup]="eventForm">
+<form [formGroup]="GuestLoginForm">
     <mat-form-field appearance="fill" class="width-50">
       <mat-label>phone</mat-label>
       <input matInput placeholder="Enter phone"  formControlName="phone" >      
     </mat-form-field> 
 
-    <!-- <br/> <br/> <button mat-raised-button  (click)="CheckUser()" class="button">התחברות</button> -->
+    <br/> <br/> <button mat-raised-button  (click)="CheckUser()" class="button">התחברות</button>
   </form>
 
 <router-outlet></router-outlet>

@@ -6,8 +6,8 @@ export class User{
      Phone!: string;
      Email!: string;
         
-        constructor(){}
-    };
+constructor(){}
+};
 
 
 

@@ -1,7 +1,7 @@
 <app-nav></app-nav>
 <p>show-arrival-confirmation works!</p>
 <div *ngFor="let i of showAllInvitedGuests">
-    {{i.UserId}}
+    {{i.User?.Name}}
     {{i.ArrivalConf}}
 </div>
 

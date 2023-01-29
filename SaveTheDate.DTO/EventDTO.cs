@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SaveTheDate.DL.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -16,5 +17,8 @@ namespace SaveTheDate.DTO
         public string Link { get; set; }
         public string Text { get; set; }
         public string Picture { get; set; }
+
+        public virtual EventType EventTypeNavigation { get; set; }
+        public virtual User User { get; set; }
     }
 }

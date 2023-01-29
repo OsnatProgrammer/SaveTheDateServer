@@ -1,1 +1,40 @@
 <p>add-shuttle works!</p>
+
+<form [formGroup]="BusForm">
+    <!-- <mat-form-field appearance="fill" class="width-50">
+      <mat-label>תאור השולחן</mat-label>
+      <input matInput placeholder="הכנס תאור שולחן"  formControlName="eventId" >      
+    </mat-form-field>  -->
+
+    <mat-form-field appearance="fill" class="width-50">
+        <mat-label>מספר מושבים</mat-label>
+        <input matInput placeholder="הכנס מספר מושבים"  formControlName="seatsNum" >      
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="width-50">
+        <mat-label>תאור המסלול</mat-label>
+        <input matInput placeholder="הכנס תאור המסלול"  formControlName="route" >      
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="width-50">
+        <mat-label>שעת יציאה</mat-label>
+        <input matInput placeholder="הכנס שעת יציאה"  formControlName="departureTime" >      
+      </mat-form-field>
+
+           <!-- <input mdc-datetime-picker="" date="false" time="true" placeholder="Time" minutes="true"
+    ng-model-options="{timezone: 'utc'}" min-date="minDate" type="text" id="timez"
+    format="HH:mm" edit-input="true" show-icon="true" ng-model="timez" class=" dtp-no-msclear dtp-input md-input">
+
+
+    <div class="toggle-example">
+        <input [ngxTimepicker]="toggleTimepicker" [disableClick]="true" readonly>
+        <ngx-material-timepicker-toggle [for]="toggleTimepicker"></ngx-material-timepicker-toggle>
+        <ngx-material-timepicker #toggleTimepicker></ngx-material-timepicker>
+    </div> -->
+
+
+
+      <br/> <br/> <button mat-raised-button  (click)="addBus()" class="button" >הוספת הסעה</button>
+ 
+
+</form>

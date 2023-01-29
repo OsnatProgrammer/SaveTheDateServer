@@ -1,9 +1,12 @@
 ﻿using SaveTheDate.DL.Models;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace SaveTheDate.DL
 {
     public interface IUserDL
     {
-        int AddUser(User newUser);
+        List<User> GetAllUsers();
+       Task<int> AddUser(User newUser);
     }
 }

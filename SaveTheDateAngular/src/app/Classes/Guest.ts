@@ -1,14 +1,27 @@
+import { Bus } from "./Bus";
+import { User } from "./User";
+import { Event } from "./Event";
+import { EventGift } from "./EventGift";
+import { Table } from "./Table";
+
+
 export class Guest{
  
          Id?: number;
          UserId!: number|undefined;
          EventId!:number|undefined;
          ArrivalConf!:boolean;
-
          TableNum?: number;
          BusId?: number;
-         GiftId?: number
-       constructor(){}
+         GiftId?: number;
+
+         Bus?:Bus;
+         Event?:Event;
+         EventGift?:EventGift
+         Table?:Table
+         User?:User;
+      
+         constructor(){}
     };
 
 
