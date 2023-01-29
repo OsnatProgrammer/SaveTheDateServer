@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { EventService } from 'src/app/Service/event.service';
 import { Event } from 'src/app/Classes/Event';
@@ -35,11 +35,11 @@ export class CreateEventComponent implements OnInit {
   constructor(private EventSer: EventService, private myRoute: Router, public dialog: MatDialog) { }
   //בדיקות תקינות
   ngOnInit(): void {
+    console.log(this.passwordToPass);
     this.eventForm = new FormGroup({
-      userId: new FormControl(0, [Validators.required]),
       eventType: new FormControl(1, [Validators.required, Validators.min(1), Validators.max(3)]),
       date: new FormControl(new Date(), [Validators.required]),
-      password: new FormControl("", [Validators.required]),
+      password: new FormControl(this.passwordToPass, [Validators.required]),
       name: new FormControl("", [Validators.required]),
       location: new FormControl("", [Validators.required]),
       link: new FormControl("", [Validators.required]),
@@ -52,7 +52,7 @@ export class CreateEventComponent implements OnInit {
     if (this.eventForm.valid) {
       console.log(this.eventForm)
       this.newEvent = {
-        UserId: this.eventForm.controls.userId.value, EventType: 1, Date: new Date(),
+        UserId: this.userId, EventType: 1, Date: new Date(),
         Password: this.eventForm.controls.password.value, Name: this.eventForm.controls.name.value,
         Location: this.eventForm.controls.location.value, Link: this.eventForm.controls.link.value,
         Text: this.eventForm.controls.text.value, Picture: this.eventForm.controls.picture.value
@@ -93,6 +93,8 @@ export class CreateEventComponent implements OnInit {
     });
   }
 
+@Input() passwordToPass!: number;
+@Input() userId!: number;
 
 
 }

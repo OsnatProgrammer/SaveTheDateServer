@@ -1,11 +1,12 @@
 ﻿using SaveTheDate.DL.Models;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace SaveTheDate.DL
 {
     public interface IGuestDL
     {
-        bool AddGuest(Guest newGuest);
+        Task<bool> AddGuest(Guest newGuest);
         bool DeleteGuest(int GuestID);
       //  List<EventGift> GetAllCash(int id);
         List<Guest> GetAllConfirmGuests(int id);

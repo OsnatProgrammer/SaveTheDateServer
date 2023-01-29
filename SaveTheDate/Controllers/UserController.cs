@@ -11,41 +11,41 @@ namespace SaveTheDate.API.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-            private IUserBL _UserBL;
+        private IUserBL _UserBL;
 
-            public UserController(IUserBL UserBL)
+        public UserController(IUserBL UserBL)
+        {
+            _UserBL = UserBL;
+        }
+
+        [HttpGet]
+        [Route("GetAllUsers")]
+        public IActionResult GetAllUsers()
+        {
+            try
             {
-                _UserBL = UserBL;
+                return
+                Ok(_UserBL.GetAllUsers());
             }
-
-         [HttpGet]
-         [Route("GetAllUsers")]
-         public IActionResult GetAllUsers()
-         {
-             try
-             {
-                 return
-                 Ok(_UserBL.GetAllUsers());
-             }
-             catch (Exception ex)
-             {
-                 return StatusCode(500, ex.Message);
-             }
-         }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
 
 
         [HttpPost]
-            [Route("AddUser")]
-            public async Task<int> AddUser(UserDTO newUser)
+        [Route("AddUser")]
+        public async Task<int> AddUser(UserDTO newUser)
+        {
+            try
             {
-                try
-                {
-                    return _UserBL.AddUser(newUser);
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
+                return await _UserBL.AddUser(newUser);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
+    }
 }

@@ -5,6 +5,7 @@ using SaveTheDate.DTO;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace SaveTheDate.BL
 {
@@ -25,10 +26,10 @@ namespace SaveTheDate.BL
             mapper = config.CreateMapper();
         }
         //POST
-        public bool AddGuest(GuestDTO newGuestDTO)
+        public async Task<bool> AddGuest(GuestDTO newGuestDTO)
         {
             Guest myGuest = mapper.Map<GuestDTO, Guest>(newGuestDTO);
-            return _guestDL.AddGuest(myGuest);
+            return await _guestDL.AddGuest(myGuest);
         }
 
         //DELETE

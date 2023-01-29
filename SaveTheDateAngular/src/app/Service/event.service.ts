@@ -25,7 +25,13 @@ export class EventService {
   readonly APIUrlBus = "https://localhost:44304/api/Bus"
   readonly APIUrlUser ="https://localhost:44304/api/User"
 
-  IdentifiedEvent: Event = new Event();
+  IdentifiedEvent: Event = {    Id: 2,
+    UserId: 5,
+    EventType: 1,
+    Date: new Date(),
+    Password: 'FF',
+    Name: 'חתונה אסנת והדסה',
+    Location: 'ירושלים'};
   isIdentified = false;
   numOfSeatsInTable:number=0
 

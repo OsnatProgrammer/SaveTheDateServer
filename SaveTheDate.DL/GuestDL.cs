@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace SaveTheDate.DL
 {
@@ -121,8 +122,13 @@ namespace SaveTheDate.DL
         //POST
         //הוספת מוזמן בודד לרשימת מוזמנים בדטה בייס
 
-        public bool AddGuest(Guest newGuest)
+        public async Task<bool> AddGuest(Guest newGuest)
         {
+            var g = await SaveTheDateContext.Guests.FirstOrDefaultAsync(g => g.UserId == newGuest.UserId && g.EventId == newGuest.EventId);
+            if (g != null)
+            {
+                return true;
+            }
             try
             {
                 SaveTheDateContext.Add(newGuest);

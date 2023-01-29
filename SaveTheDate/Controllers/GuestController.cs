@@ -4,6 +4,7 @@ using SaveTheDate.BL;
 using SaveTheDate.DL.Models;
 using SaveTheDate.DTO;
 using System;
+using System.Threading.Tasks;
 
 namespace SaveTheDate.API.Controllers
 {
@@ -97,12 +98,12 @@ namespace SaveTheDate.API.Controllers
 
         [HttpPost]
             [Route("AddGuest")]
-            public bool AddGuest(GuestDTO newGuestDTO)
+            public async Task<bool> AddGuest(GuestDTO newGuestDTO)
             {
                 try
                 {
                     return
-                    _guestBL.AddGuest(newGuestDTO);
+                    await _guestBL.AddGuest(newGuestDTO);
                 }
                 catch (Exception ex)
                 {
